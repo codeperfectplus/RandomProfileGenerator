@@ -1,7 +1,10 @@
 # Random Profile Generator
-### Python Module
-#### pip install randomname
+##### Introduction
+randomname is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
 
+```python
+pip install randomname
+```
 ### Documentation
 ```python
 #firt create a object for class 'Name'
@@ -21,7 +24,10 @@ name.full_name()
 # For First Name
 name.full_profile()
 ```
-
+## Future Update
+- More Random data will be added to package.
+- variety of Random-Data will increase.
+## Author
 - Author  : CodePerfectPlus
 - Language : Python
 - Github : https://github.com/codePerfectPlus

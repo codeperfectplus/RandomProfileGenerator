@@ -1,15 +1,18 @@
 Metadata-Version: 2.1
 Name: randomname
-Version: 4.0.0
+Version: 6.0.0
 Summary: Generate Random Name
 Home-page: https://github.com/codePerfectPlus/Random-Profile-Generator
 Author: CodePerfectPlus
 Author-email: deepak008@live.com
 License: UNKNOWN
 Description: # Random Profile Generator
-        ### Python Module
-        #### pip install randomname
+        ##### Introduction
+        randomname is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
         
+        ```python
+        pip install randomname
+        ```
         ### Documentation
         ```python
         #firt create a object for class 'Name'
@@ -29,7 +32,10 @@ Description: # Random Profile Generator
         # For First Name
         name.full_profile()
         ```
-        
+        ## Future Update
+        - More Random data will be added to package.
+        - variety of Random-Data will increase.
+        ## Author
         - Author  : CodePerfectPlus
         - Language : Python
         - Github : https://github.com/codePerfectPlus
