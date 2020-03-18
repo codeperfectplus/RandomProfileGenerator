@@ -1,12 +1,12 @@
 Metadata-Version: 2.1
 Name: randomname
-Version: 3.0.0
+Version: 4.0.0
 Summary: Generate Random Name
-Home-page: https://github.com/codeperfectplus/
+Home-page: https://github.com/codePerfectPlus/Random-Profile-Generator
 Author: CodePerfectPlus
 Author-email: deepak008@live.com
 License: UNKNOWN
-Description: # Random Name Generator
+Description: # Random Profile Generator
         ### Python Module
         #### pip install randomname
         
@@ -16,7 +16,7 @@ Description: # Random Name Generator
         import randomname as rn
         name = rn.Name(num=1)
         '''
-        num = How many name you want
+        num = Total No. of Name You Want To Print
         deafult is 1
         To Print More Than one Name Change value of num
         '''
