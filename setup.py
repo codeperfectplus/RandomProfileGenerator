@@ -8,7 +8,7 @@ setuptools.setup(
     name="randomname",
  
     #version of the module
-    version="6.0.0",
+    version="8.0.0",
  
     #Name of Author
     author="CodePerfectPlus",
