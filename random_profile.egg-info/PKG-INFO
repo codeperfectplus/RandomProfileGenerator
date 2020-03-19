@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: random-profile
-Version: 0.0.3
+Version: 0.0.4
 Summary: Generate Random Profile
 Home-page: https://github.com/codePerfectPlus/Random-Profile-Generator
 Author: CodePerfectPlus
@@ -33,8 +33,10 @@ Description: # Random Profile Generator
         name.full_profile()
         ```
         ## Installation
-        This is A python 3 pacakge.
-        Istall python 3.0+ or Anaconda 3.0
+        
+        - This is A python 3 pacakge.
+        - Install python 3.0+ or Anaconda 3.0+
+        
         ```python
         Pip install random-profile   #on python
         conda install random-profile # on anacoda
@@ -57,9 +59,9 @@ Description: # Random Profile Generator
         
         Perform basic troubleshooting steps:
         
-        Make sure youâ€™re on the latest version. If youâ€™re not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.
-        Try older versions. If youâ€™re already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log.
-        Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading/downgrading those as well.
+        - Make sure youâ€™re on the latest version. If youâ€™re not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.
+        - Try older versions. If youâ€™re already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log.
+        - Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading/downgrading those as well.
         
         ## Authors and acknowledgment
         Show your appreciation to those who have contributed to the project.
