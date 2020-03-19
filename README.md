@@ -3,12 +3,12 @@
 randomname is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
 
 ```python
-pip install randomname
+pip install random-profile
 ```
 ### Documentation
 ```python
 #firt create a object for class 'Name'
-import randomname as rn
+import random_profile as rp
 name = rn.Name(num=1)
 '''
 num = Total No. of Name You Want To Print
@@ -28,11 +28,11 @@ name.full_profile()
 This is A python 3 pacakge.
 Istall python 3.0+ or Anaconda 3.0
 ```python
-Pip install randomname   #on python
-conda install randomname # on anacoda
+Pip install random-profile   #on python
+conda install random-profile # on anacoda
 ```
 ## Usage
-Randomname module is a random profile generator for many usages ex- fake dataset,youtube videos, content creation, personal projects.
+random-profile module is a random profile generator for many usages ex- fake dataset,youtube videos, content creation, personal projects.
 
 ## Support
 Cotributors for the Project
@@ -62,6 +62,7 @@ For open source projects,Under MIT License.
 ## Project status
 
 ## Author
+- Module : random-profile
 - Author  : CodePerfectPlus
 - Language : Python
 - Github : https://github.com/codePerfectPlus
