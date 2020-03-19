@@ -5,10 +5,10 @@ with open("README.md", "r") as fh:
  
 setuptools.setup(
     #Here is the module name.
-    name="randomname",
+    name="random_profile",
  
     #version of the module
-    version="8.0.0",
+    version="0.0.1",
  
     #Name of Author
     author="CodePerfectPlus",
@@ -17,7 +17,7 @@ setuptools.setup(
     author_email="deepak008@live.com",
  
     #Small Description about module
-    description="Generate Random Name",
+    description="Generate Random Profile",
  
     long_description=long_description,
  

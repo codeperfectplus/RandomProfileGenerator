@@ -1,7 +1,0 @@
-README.md
-setup.py
-randomname/__init__.py
-randomname.egg-info/PKG-INFO
-randomname.egg-info/SOURCES.txt
-randomname.egg-info/dependency_links.txt
-randomname.egg-info/top_level.txt

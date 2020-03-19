@@ -1,5 +1,5 @@
 '''
-python random name generator module
+python Random Profile generator module
 author : codeperfectplus
 language : python 3.0 ++
 github : codeperfectplus

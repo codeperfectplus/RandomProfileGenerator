@@ -1,0 +1,83 @@
+Metadata-Version: 2.1
+Name: random-profile
+Version: 0.0.1
+Summary: Generate Random Profile
+Home-page: https://github.com/codePerfectPlus/Random-Profile-Generator
+Author: CodePerfectPlus
+Author-email: deepak008@live.com
+License: UNKNOWN
+Description: # Random Profile Generator
+        ##### Introduction
+        randomname is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
+        
+        ```python
+        pip install randomname
+        ```
+        ### Documentation
+        ```python
+        #firt create a object for class 'Name'
+        import randomname as rn
+        name = rn.Name(num=1)
+        '''
+        num = Total No. of Name You Want To Print
+        deafult is 1
+        To Print More Than one Name Change value of num
+        '''
+        # For First Name
+        name.first_name()
+        
+        # For First Name
+        name.full_name()
+        
+        # For First Name
+        name.full_profile()
+        ```
+        ## Installation
+        This is A python 3 pacakge.
+        Istall python 3.0+ or Anaconda 3.0
+        ```python
+        Pip install randomname   #on python
+        conda install randomname # on anacoda
+        ```
+        ## Usage
+        Randomname module is a random profile generator for many usages ex- fake dataset,youtube videos, content creation, personal projects.
+        
+        ## Support
+        Cotributors for the Project
+        [CodePerfectPLus](https://github.com/codePerfectPlus)
+        ...
+        
+        ## Roadmap
+        what's new in future update
+        - More Random data will be added to package.
+        - variety of Random-Data will increase.
+        
+        ## Contributing
+        Before submitting a bug, please do the following:
+        
+        Perform basic troubleshooting steps:
+        
+        Make sure youâ€™re on the latest version. If youâ€™re not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.
+        Try older versions. If youâ€™re already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log.
+        Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading/downgrading those as well.
+        
+        ## Authors and acknowledgment
+        Show your appreciation to those who have contributed to the project.
+        
+        ## License
+        For open source projects,Under MIT License.
+        
+        ## Project status
+        
+        ## Author
+        - Author  : CodePerfectPlus
+        - Language : Python
+        - Github : https://github.com/codePerfectPlus
+        - Website : http://codeperfectplus.github.io/
+        
+        
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
