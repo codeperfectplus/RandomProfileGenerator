@@ -9,7 +9,7 @@ pip install random-profile
 ```python
 #firt create a object for class 'Name'
 import random_profile as rp
-name = rn.Name(num=1)
+name = rp.Name(num=1)
 '''
 num = Total No. of Name You Want To Print
 deafult is 1
