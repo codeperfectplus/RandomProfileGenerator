@@ -5,8 +5,7 @@ python:
    install:      
       - method: pip
         path: pip install random-profile
-        extra_requirements:
-            - docs
+        
       - method: setuptools
-        path: random_profile
+        path: setup.py
    system_packages: true
