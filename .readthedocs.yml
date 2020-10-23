@@ -2,10 +2,9 @@ version: 2
 
 python:
    version: 3.7
-   install:
-      - requirements: requirements.txt
+   install:      
       - method: pip
-        path: .
+        path: pip install random-profile
         extra_requirements:
             - docs
       - method: setuptools
