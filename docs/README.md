@@ -1,52 +1,64 @@
 # Random Profile Generator
-##### Introduction
-randomname is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
+
+## Introduction
+
+RandomProfile is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
 
 ```python
 pip install random-profile
 ```
-### Documentation
+
+## Documentation
+
 ```python
-#firt create a object for class 'Name'
-import random_profile as rp
-name = rp.Name(num=1)
+from random_profile import RandomProfile
+rp = RandomProfile(num=5)
 '''
+
 num = Total No. of Name You Want To Print
-deafult is 1
-To Print More Than one Name Change value of num
+default is 1
+change the num value according to your needs.
+
 '''
 # For First Name
-name.first_name()
+rp.first_name()
 
 # For First Name
-name.full_name()
+rp.full_name()
 
 # For First Name
-name.full_profile()
+rp.full_profile()
 ```
+
 ## Installation
 
-- This is A python 3 pacakge.
+- This is A python 3 Package.
 - Install python 3.0+ or Anaconda 3.0+
 
 ```python
 Pip install random-profile   #on python
 conda install random-profile # on anacoda
 ```
+
 ## Usage
+
 random-profile module is a random profile generator for many usages ex- fake dataset,youtube videos, content creation, personal projects.
 
 ## Support
-Cotributors for the Project
+
+Contributors for the Project
 [CodePerfectPLus](https://github.com/codePerfectPlus)
 ...
 
 ## Roadmap
+
 what's new in future update
+
 - More Random data will be added to package.
 - variety of Random-Data will increase.
 
 ## Contributing
+
 Before submitting a bug, please do the following:
 
 Perform basic troubleshooting steps:
@@ -56,17 +68,19 @@ Perform basic troubleshooting steps:
 - Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading/downgrading those as well.
 
 ## Authors and acknowledgment
+
 Show your appreciation to those who have contributed to the project.
 
 ## License
+
 For open source projects,Under MIT License.
 
 ## Project status
 
 ## Author
+
 - Module : random-profile
 - Author  : CodePerfectPlus
 - Language : Python
-- Github : https://github.com/codePerfectPlus
-- Website : http://codeperfectplus.github.io/
-
+- Github : <https://github.com/codePerfectPlus>
+- Website : <http://codeperfectplus.github.io/>
