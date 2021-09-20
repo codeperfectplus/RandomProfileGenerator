@@ -11,7 +11,7 @@ pip install random-profile
 ## Documentation
 
 ```python
-from random_profile as RandomProfile
+from random_profile import RandomProfile
 rp = RandomProfile(num=5)
 '''
 
