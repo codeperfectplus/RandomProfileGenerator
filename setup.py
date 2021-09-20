@@ -8,7 +8,7 @@ setuptools.setup(
     name="random_profile",
  
     #version of the module
-    version="0.0.5",
+    version="0.0.8",
  
     #Name of Author
     author="CodePerfectPlus",
