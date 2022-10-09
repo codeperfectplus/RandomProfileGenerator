@@ -11,13 +11,16 @@ github : codeperfectplus
 
 '''
 import random
-fname = ['John', 'Jane', 'Corey', 'Travis', 'Dave', 'Kurt', 'Neil', 'Sam', 'Steve', 'Tom', 'James', 'Robert', 'Michael', 'Charles', 'Joe', 'Mary', 'Maggie', 'Nicole', 'Patricia', 'Linda', 'Barbara', 'Elizabeth', 'Laura',
-         'Jennifer', 'Maria', 'Adam', 'Sturt', 'Nikolson', 'Tom', 'Harry', 'Ruskin', 'Thor', 'Rocky', 'Ravid', 'David', 'Harris', 'Eion', 'Elon', 'Mark', 'Will', 'Chris', 'Laura', 'Samara', 'Darren', 'Jim', 'Jeremy', 'Dylan', 'Jake', 'Patti', 'Paget', 'Mira', 'Maude', 'Katie', 'Rob',
-         'Brian', 'Kerry', 'Chad', 'Nicola']
-        
-lname = ['Smith', 'Doe', 'Jenkins', 'Robinson', 'Davis', 'Stuart', 'Jefferson', 'Jacobs', 'Wright', 'Patterson', 'Wilks', 'Arnold', 'Johnson', 'Williams', 'Jones', 'Brown',
-         'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Potter', 'Jukerberg', 'Smith', 'Nebula', 'Downy', 'Downy Jr',
-         'Brewster', 'Amberg', 'Kaye', 'Harrier', 'Criss', 'Parsons', 'McDermott', 'Picking', 'Hudson']
+
+fname_txt_file = "random_profile\\assets\\fnames.txt"
+lname_txt_file = "random_profile\\assets\\lnames.txt"
+
+with open(fname_txt_file, "r") as fp:
+   fname = fp.read().splitlines()
+
+with open(lname_txt_file, "r") as fp:
+   lname = fp.read().splitlines()
+
 
 street_names = ['Main', 'High', 'Pearl', 'Maple', 'Park',
                 'Oak', 'Pine', 'Cedar', 'Elm', 'Washington', 'Lake', 'Hill']
