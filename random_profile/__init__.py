@@ -11,10 +11,11 @@ github : codeperfectplus
 
 '''
 import random
-fname = ['John', 'Jane', 'Corey', 'Travis', 'Dave', 'Kurt', 'Neil', 'Sam', 'Steve', 'Tom', 'James', 'Robert', 'Michael', 'Charles', 'Joe', 'Mary', 'Maggie', 'Nicole', 'Patricia', 'Linda', 'Barbara', 'Elizabeth', 'Laura',
-         'Jennifer', 'Maria', 'Adam', 'Sturt', 'Nikolson', 'Tom', 'Harry', 'Ruskin', 'Thor', 'Rocky', 'Ravid', 'David', 'Harris', 'Eion', 'Elon', 'Mark', 'Will', 'Chris', 'Laura', 'Samara', 'Darren', 'Jim', 'Jeremy', 'Dylan', 'Jake', 'Patti', 'Paget', 'Mira', 'Maude', 'Katie', 'Rob',
-         'Brian', 'Kerry', 'Chad', 'Nicola']
-        
+fname = []
+f = open("random_profile\\fnames.txt", "r")
+for line in f:
+    fname.append(line.replace("\n", ""))
+print(fname)
 lname = ['Smith', 'Doe', 'Jenkins', 'Robinson', 'Davis', 'Stuart', 'Jefferson', 'Jacobs', 'Wright', 'Patterson', 'Wilks', 'Arnold', 'Johnson', 'Williams', 'Jones', 'Brown',
          'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Potter', 'Jukerberg', 'Smith', 'Nebula', 'Downy', 'Downy Jr',
          'Brewster', 'Amberg', 'Kaye', 'Harrier', 'Criss', 'Parsons', 'McDermott', 'Picking', 'Hudson']
