@@ -11,16 +11,17 @@ github : codeperfectplus
 
 '''
 import random
-fname = []
-f = open("random_profile\\assets\\fnames.txt", "r")
-for line in f:
-    fname.append(line.replace("\n", ""))
-f.close()
-lname = []
-f = open("random_profile\\assets\\lnames.txt", "r")
-for line in f:
-    lname.append(line.replace("\n", ""))
-f.close()
+
+fname_txt_file = "random_profile\\assets\\fnames.txt"
+lname_txt_file = "random_profile\\assets\\lnames.txt"
+
+with open(fname_txt_file, "r") as fp:
+   fname = fp.read().splitlines()
+
+with open(lname_txt_file, "r") as fp:
+   lname = fp.read().splitlines()
+
+
 street_names = ['Main', 'High', 'Pearl', 'Maple', 'Park',
                 'Oak', 'Pine', 'Cedar', 'Elm', 'Washington', 'Lake', 'Hill']
 
