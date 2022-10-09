@@ -12,14 +12,15 @@ github : codeperfectplus
 '''
 import random
 fname = []
-f = open("random_profile\\fnames.txt", "r")
+f = open("random_profile\\assets\\fnames.txt", "r")
 for line in f:
     fname.append(line.replace("\n", ""))
-print(fname)
-lname = ['Smith', 'Doe', 'Jenkins', 'Robinson', 'Davis', 'Stuart', 'Jefferson', 'Jacobs', 'Wright', 'Patterson', 'Wilks', 'Arnold', 'Johnson', 'Williams', 'Jones', 'Brown',
-         'Davis', 'Miller', 'Wilson', 'Moore', 'Taylor', 'Anderson', 'Thomas', 'Jackson', 'White', 'Harris', 'Martin', 'Potter', 'Jukerberg', 'Smith', 'Nebula', 'Downy', 'Downy Jr',
-         'Brewster', 'Amberg', 'Kaye', 'Harrier', 'Criss', 'Parsons', 'McDermott', 'Picking', 'Hudson']
-
+f.close()
+lname = []
+f = open("random_profile\\assets\\lnames.txt", "r")
+for line in f:
+    lname.append(line.replace("\n", ""))
+f.close()
 street_names = ['Main', 'High', 'Pearl', 'Maple', 'Park',
                 'Oak', 'Pine', 'Cedar', 'Elm', 'Washington', 'Lake', 'Hill']
 
