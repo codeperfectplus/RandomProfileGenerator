@@ -33,7 +33,7 @@ class RandomProfile:
     def __init__(self, num=1):
         '''
         num = Total No. of Name You Want To Print
-        deafult is 1
+        default is 1
         To Print More Than one Name Change value of num
         '''
         self.num = num
