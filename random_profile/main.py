@@ -18,7 +18,7 @@ ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 fname_txt = os.path.join(ROOT_DIR, "random_profile/assets/fnames.txt")
 lname_txt = os.path.join(ROOT_DIR, "random_profile/assets/lnames.txt")
-states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.txt")
+street_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.txt")
 cities_name_txt = os.path.join(ROOT_DIR, "random_profile/assets/cities_name.txt")
 states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/states_names.txt")
 
@@ -27,7 +27,7 @@ fname = load_txt_file(fname_txt)
 lname = load_txt_file(lname_txt)
 states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
-street_names = load_txt_file(states_names_txt)
+street_names = load_txt_file(street_names_txt)
 
 class RandomProfile:
     def __init__(self, num=1):
