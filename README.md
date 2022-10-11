@@ -2,7 +2,7 @@
 
 ## Introduction
 
-RandomProfile is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here.
+[RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
 ```python
 pip install random-profile
@@ -78,12 +78,8 @@ Show your appreciation to those who have contributed to the project.
 
 For open source projects,Under MIT License.
 
-## Project status
+## Contributors
 
-## Author
-
-- Module : random-profile
-- Author  : CodePerfectPlus
-- Language : Python
-- Github : <https://github.com/codePerfectPlus>
-- Website : <http://codeperfectplus.github.io/>
+<a href="https://github.com/codePerfectPlus/awesomeScripts/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=codePerfectPlus/randomprofilegenerator" />
+</a>
