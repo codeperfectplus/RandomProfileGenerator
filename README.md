@@ -20,14 +20,17 @@ default is 1
 change the num value according to your needs.
 
 '''
-# For First Name
+# For first name
 rp.first_name()
 
-# For First Name
+# For full name
 rp.full_name()
 
-# For First Name
+# For full profile
 rp.full_profile()
+
+# For last name
+rp.last_name()
 ```
 
 ## Installation
@@ -42,7 +45,7 @@ conda install random-profile # on anacoda
 
 ## Usage
 
-random-profile module is a random profile generator for many usages ex- fake dataset,youtube videos, content creation, personal projects.
+random-profile module is a random profile generator for many usages ex- fake dataset, youtube videos, content creation, personal projects.
 
 ## Support
 
