@@ -47,7 +47,7 @@ rp.last_name(num=6)
 
 ## Usage
 
-random-profile module is a random profile generator for many usages ex- fake dataset, youtube videos, content creation, personal projects.
+the random-profile module is a random profile generator for many usages like: ex- fake dataset, YouTube videos, content creation, personal projects.
 
 ## Support
 
