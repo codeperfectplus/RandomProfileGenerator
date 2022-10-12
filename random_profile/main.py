@@ -22,6 +22,7 @@ street_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.tx
 cities_name_txt = os.path.join(ROOT_DIR, "random_profile/assets/cities_name.txt")
 states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/states_names.txt")
 job_titles_txt = os.path.join(ROOT_DIR, "random_profile/assets/job_titles.txt")
+email_domain_txt = os.path.join(ROOT_DIR, "random_profile/assets/email_domains.txt")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -30,6 +31,7 @@ states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
+email_domains = load_txt_file(email_domain_txt)
 
 class RandomProfile:
     def __init__(self, num=1):
@@ -57,14 +59,15 @@ class RandomProfile:
         return full_name_list
 
     def full_profile(self):
-        # print full profile
         profile_list = []
         for _ in range(self.num):
             first = random.choice(fname)
             last = random.choice(lname)
-            phone = f'+ +1-{random.randint(300, 500)}{random.randint(800, 999)}{random.randint(1000,9999)}'
+            full_name = first + ' ' + last
+            phone = f'+ +1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
+            email_domain = random.choice(email_domains)
 
             street_num = random.randint(100, 999)
             street = random.choice(street_names)
@@ -73,11 +76,12 @@ class RandomProfile:
             zip_code = random.randint(10000, 99999)
 
             address = f'{street_num} {street} St. {city} {state} {zip_code}'
-            email = first.lower() + last.lower() + '@bogusemail.com'
+            email = first.lower() + last.lower() + '@' + email_domain
 
             profile_dict = {}
             profile_dict['first_name'] = first
             profile_dict['last_name'] = last
+            profile_dict['full_name'] = full_name
             profile_dict['phone'] = phone
             profile_dict['address'] = address
             profile_dict['email'] = email
