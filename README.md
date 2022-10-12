@@ -57,8 +57,8 @@ Contributors for the Project
 
 what's new in future update
 
-- More variation to the existing data generators.
-- Variety of new random data generators.
+- More Random data will be added to package.
+- Variety of Random-Data will increase.
 
 ## Contributing
 
