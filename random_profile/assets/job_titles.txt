@@ -1,0 +1,69 @@
+Medicare Coordinator
+Law Clerk
+Mail Clerk
+Software Engineer
+Database Engineer
+Sound Engineer
+Game Developer
+iOS Developer
+Real Estate Agent
+Web Developer
+Nuclear Physicist
+Event Planner
+Inventory Planner
+Plumber
+Executive Producer
+News Producer
+Golf Professional
+Accounting Professor
+Agriculture Professor
+Milk Receiver
+Weather Reporter
+News Reporter
+Nurse
+Waiter
+Waitress
+Chef
+Garbage Collector
+Surgeon
+Lawyer
+Doctor
+Site Administrator
+Broker Agent
+Archaeologist
+Design Architect
+Business Assistant
+Child Care Worker
+Language Assistant
+Pharmacy Assistant
+Quality Assistant
+Grocery Cashier
+Game Designer
+Game Developer
+Marketing Expert
+Android Developer
+Training and Developer Manager
+Wealth Manager
+Fire Marshal
+Private Detective
+Detective
+Police Officer
+Family Physician
+School Teacher
+University Professor
+School Principal
+Preach
+Graphic Designer
+Animator
+Managa Artist
+Translator
+Script Writer
+Actor
+SQL Developer
+Social Media Manager
+Managing Director
+Cashier
+Real Estate Attorney
+Athlete Manager
+General Assistant
+3D Artist
