@@ -15,8 +15,8 @@ import random
 
 from random_profile.utils import ipv4_gen
 from random_profile.utils import load_txt_file
-from random_profile.utils import genrate_dob_age
-from random_profile.utils import genrate_random_height_weight
+from random_profile.utils import generate_dob_age
+from random_profile.utils import generate_random_height_weight
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -50,36 +50,42 @@ class RandomProfile:
         '''
         self.num = num
 
-    def first_name(self):
-        # print first name
-        first_name_list = [random.choice(fname) for _ in range(self.num)]
+    def first_name(self, num=None):
+        if num is None:
+            num = self.num
+        first_name_list = [random.choice(fname) for _ in range(num)]
         return first_name_list
 
-    def last_name(self):
-        # print last name
-        last_name_list = [random.choice(lname) for _ in range(self.num)]
+    def last_name(self, num=None):
+        if num is None:
+            num = self.num
+        last_name_list = [random.choice(lname) for _ in range(num)]
         return last_name_list
 
-    def full_name(self):
-        # print full name
+    def full_name(self, num=None):
+        if num is None:
+            num = self.num
         full_name_list = [random.choice(
-            fname) + ' ' + random.choice(lname) for _ in range(self.num)]
+            fname) + ' ' + random.choice(lname) for _ in range(num)]
         return full_name_list
 
-    def full_profile(self):
+    def full_profile(self, num=None):
+        if num is None:
+            num = self.num
         profile_list = []
-        for _ in range(self.num):
+        for _ in range(num):
             first = random.choice(fname)
             last = random.choice(lname)
             hair_color = random.choice(hair_colors)
             blood_type = random.choice(blood_types)
             full_name = first + ' ' + last
-            phone = f'+ +1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
+            phone = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
             email_domain = random.choice(email_domains)
-            dob, age = genrate_dob_age()
-            height, weight = genrate_random_height_weight()
+            
+            dob, age = generate_dob_age()
+            height, weight = generate_random_height_weight()
 
             street_num = random.randint(100, 999)
             street = random.choice(street_names)

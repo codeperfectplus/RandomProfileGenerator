@@ -17,7 +17,7 @@ def load_txt_file(file_name: str) -> list:
 def ipv4_gen() -> str:
     return f"{random.randint(0,255)}.{random.randint(0,255)}.{random.randint(0,255)}.{random.randint(0,255)}"
 
-def genrate_dob_age():
+def generate_dob_age():
     month = random.randint(1, 12)
     if month == 2: # if month is feb
         day = random.randint(1, 28)
@@ -35,7 +35,7 @@ def genrate_dob_age():
     
     return dob, age
 
-def genrate_random_height_weight():
+def generate_random_height_weight():
     height = random.randint(140, 200)
     if height < 150:
         weight = random.randint(40, 60)

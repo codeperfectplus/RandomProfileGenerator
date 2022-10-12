@@ -1,6 +1,6 @@
 <h1 align="center">
   <br>
-  Random Profile Generator
+  Random Profile Generator V0.2.3
   <br>
 </h1>
 
@@ -30,17 +30,19 @@ default is 1
 change the num value according to your needs.
 
 '''
+# num can be overwritten in the function
+
 # For first name
-rp.first_name()
+rp.first_name(num=10)
 
 # For full name
-rp.full_name()
+rp.full_name(num=8)
 
-# For full profile
-rp.full_profile()
+# override the num value
+rp.full_profile(num=10)
 
 # For last name
-rp.last_name()
+rp.last_name(num=6)
 ```
 
 ## Usage
@@ -59,6 +61,24 @@ what's new in future update
 
 - More Random data will be added to package.
 - Variety of Random-Data will increase.
+
+## Changelog
+
+v0.2.3
+- Flask app added
+- Date of Birth Added
+- Age added
+- Height and Weight Added
+- Blood Group and hair color added
+- Job title added
+- More email domains added
+- Bugs Fixed
+
+v0.2.1
+- More variation added to the data
+- Test cases added
+- Created a separate file for data loadings
+- Fixed some bugs
 
 ## Contributing
 
