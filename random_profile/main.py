@@ -21,7 +21,6 @@ lname_txt = os.path.join(ROOT_DIR, "random_profile/assets/lnames.txt")
 street_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.txt")
 cities_name_txt = os.path.join(ROOT_DIR, "random_profile/assets/cities_name.txt")
 states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/states_names.txt")
-country_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/country_names.txt")
 job_titles_txt = os.path.join(ROOT_DIR, "random_profile/assets/job_titles.txt")
 
 # loading data from txt files
@@ -30,7 +29,6 @@ lname = load_txt_file(lname_txt)
 states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
-country_names = load_txt_file(country_names_txt)
 job_titles = load_txt_file(job_titles_txt)
 
 class RandomProfile:
@@ -88,10 +86,6 @@ class RandomProfile:
     def ipv4(self):
         ip_list = [ipv4_gen() for _ in range(self.num)]
         return ip_list
-
-    def country(self):
-        country_list = [random.choice(country_names) for _ in range(self.num)]
-        return country_list
     
     def job_title(self):
         job_title_list = [random.choice(job_titles) for _ in range(self.num)]
