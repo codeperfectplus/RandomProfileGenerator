@@ -1,11 +1,21 @@
-# Random Profile Generator
+<h1 align="center">
+  <br>
+  Random Profile Generator
+  <br>
+</h1>
 
-## Introduction
+<h4 align="center">Python Module To Generater Random Profile Data</h4>
 
 [RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
-```python
-pip install random-profile
+## Installation
+
+- This is A python 3 Package.
+- Install python 3.0+ or Anaconda 3.0+
+
+```bash
+pip install random-profile   # using pip
+conda install random-profile # using anaconda
 ```
 
 ## Documentation
@@ -33,16 +43,6 @@ rp.full_profile()
 rp.last_name()
 ```
 
-## Installation
-
-- This is A python 3 Package.
-- Install python 3.0+ or Anaconda 3.0+
-
-```python
-Pip install random-profile   #on python
-conda install random-profile # on anacoda
-```
-
 ## Usage
 
 random-profile module is a random profile generator for many usages ex- fake dataset, youtube videos, content creation, personal projects.
@@ -58,7 +58,7 @@ Contributors for the Project
 what's new in future update
 
 - More Random data will be added to package.
-- variety of Random-Data will increase.
+- Variety of Random-Data will increase.
 
 ## Contributing
 
@@ -76,7 +76,7 @@ Show your appreciation to those who have contributed to the project.
 
 ## License
 
-For open source projects,Under MIT License.
+The project is licensed under the <a href="/LICENSE">MIT</a> license. 
 
 ## Contributors
 
