@@ -25,6 +25,24 @@ def main():
         help="Get last name instead of first name",
         action="store_true",
     )
+    group.add_argument(
+        "-c",
+        "--country",
+        help="Get country name",
+        action="store_true",
+    )
+    group.add_argument(
+        "-ip",
+        "--ipv4",
+        help="Get an ipv4 IP address",
+        action="store_true",
+    )
+    group.add_argument(
+        "-j",
+        "--jobtitle",
+        help="Get job title",
+        action="store_true",
+    )
 
     args = parser.parse_args()
 
@@ -35,6 +53,12 @@ def main():
         print(*rp.full_profile(), sep="\n")
     elif args.lastname:
         print(*rp.last_name(), sep="\n")
+    elif args.country:
+        print(*rp.country(), sep="\n")
+    elif args.jobtitle:
+        print(*rp.job_title(), sep="\n")
+    elif args.ipv4:
+        print(*rp.ipv4(), sep="\n")
     else:
         print(*rp.first_name())
 
