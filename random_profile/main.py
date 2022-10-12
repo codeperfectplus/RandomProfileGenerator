@@ -12,12 +12,18 @@ github : codeperfectplus
 '''
 import os
 import random
-from random_profile.utils import ipv4_gen, load_txt_file
+
+from random_profile.utils import ipv4_gen
+from random_profile.utils import load_txt_file
+from random_profile.utils import genrate_dob_age
+from random_profile.utils import genrate_random_height_weight
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 fname_txt = os.path.join(ROOT_DIR, "random_profile/assets/fnames.txt")
 lname_txt = os.path.join(ROOT_DIR, "random_profile/assets/lnames.txt")
+hair_colors_txt = os.path.join(ROOT_DIR, "random_profile/assets/hair_colors.txt")
+blood_types_txt = os.path.join(ROOT_DIR, "random_profile/assets/blood_types.txt")
 street_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.txt")
 cities_name_txt = os.path.join(ROOT_DIR, "random_profile/assets/cities_name.txt")
 states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/states_names.txt")
@@ -27,6 +33,8 @@ email_domain_txt = os.path.join(ROOT_DIR, "random_profile/assets/email_domains.t
 # loading data from txt files
 fname = load_txt_file(fname_txt)
 lname = load_txt_file(lname_txt)
+hair_colors = load_txt_file(hair_colors_txt)
+blood_types = load_txt_file(blood_types_txt)
 states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
@@ -63,11 +71,15 @@ class RandomProfile:
         for _ in range(self.num):
             first = random.choice(fname)
             last = random.choice(lname)
+            hair_color = random.choice(hair_colors)
+            blood_type = random.choice(blood_types)
             full_name = first + ' ' + last
             phone = f'+ +1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
             email_domain = random.choice(email_domains)
+            dob, age = genrate_dob_age()
+            height, weight = genrate_random_height_weight()
 
             street_num = random.randint(100, 999)
             street = random.choice(street_names)
@@ -81,7 +93,13 @@ class RandomProfile:
             profile_dict = {}
             profile_dict['first_name'] = first
             profile_dict['last_name'] = last
+            profile_dict['hair_color'] = hair_color
+            profile_dict['blood_type'] = blood_type
             profile_dict['full_name'] = full_name
+            profile_dict['DOB'] = dob
+            profile_dict['age'] = age
+            profile_dict['height'] = height
+            profile_dict['weight'] = weight
             profile_dict['phone'] = phone
             profile_dict['address'] = address
             profile_dict['email'] = email
