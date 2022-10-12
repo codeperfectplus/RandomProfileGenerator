@@ -26,12 +26,6 @@ def main():
         action="store_true",
     )
     group.add_argument(
-        "-c",
-        "--country",
-        help="Get country name",
-        action="store_true",
-    )
-    group.add_argument(
         "-ip",
         "--ipv4",
         help="Get an ipv4 IP address",
@@ -53,8 +47,6 @@ def main():
         print(*rp.full_profile(), sep="\n")
     elif args.lastname:
         print(*rp.last_name(), sep="\n")
-    elif args.country:
-        print(*rp.country(), sep="\n")
     elif args.jobtitle:
         print(*rp.job_title(), sep="\n")
     elif args.ipv4:
