@@ -63,6 +63,8 @@ class RandomProfile:
             first = random.choice(fname)
             last = random.choice(lname)
             phone = f'+ +1-{random.randint(300, 500)}{random.randint(800, 999)}{random.randint(1000,9999)}'
+            job_title = random.choice(job_titles)
+            ip_address = ipv4_gen()
 
             street_num = random.randint(100, 999)
             street = random.choice(street_names)
@@ -79,6 +81,8 @@ class RandomProfile:
             profile_dict['phone'] = phone
             profile_dict['address'] = address
             profile_dict['email'] = email
+            profile_dict['job_title'] = job_title
+            profile_dict['ip_address'] = ip_address
             profile_list.append(profile_dict)
 
         return profile_list
