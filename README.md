@@ -88,7 +88,7 @@ Perform basic troubleshooting steps:
 
 - Make sure you are on the latest version. If you are not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.
 - Try older versions. If you are already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log.
-- Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading/downgrading those as well.
+- Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading and downgrading those dependencies as well.
 
 ## Authors and acknowledgment
 
