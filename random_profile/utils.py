@@ -2,6 +2,8 @@ from datetime import datetime
 import random
 import os
 
+ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 import logging
 logging.basicConfig(filename='log/example.log', encoding='utf-8', level=logging.DEBUG)
 

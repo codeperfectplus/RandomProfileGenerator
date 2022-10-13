@@ -10,25 +10,28 @@ github : codeperfectplus
 \____/ \____/ \__,_/ \___/  /_/     \___//_/   /_/   \___/ \___/ \__/  /_/    /_/ \__,_//____/  
 
 '''
+
 import os
+import uuid
 import random
 
 from random_profile.utils import ipv4_gen
 from random_profile.utils import load_txt_file
 from random_profile.utils import generate_dob_age
 from random_profile.utils import generate_random_height_weight
+from random_profile.utils import ROOT_DIR
 
-ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
 
-fname_txt = os.path.join(ROOT_DIR, "random_profile/assets/fnames.txt")
-lname_txt = os.path.join(ROOT_DIR, "random_profile/assets/lnames.txt")
-hair_colors_txt = os.path.join(ROOT_DIR, "random_profile/assets/hair_colors.txt")
-blood_types_txt = os.path.join(ROOT_DIR, "random_profile/assets/blood_types.txt")
-street_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/street_names.txt")
-cities_name_txt = os.path.join(ROOT_DIR, "random_profile/assets/cities_name.txt")
-states_names_txt = os.path.join(ROOT_DIR, "random_profile/assets/states_names.txt")
-job_titles_txt = os.path.join(ROOT_DIR, "random_profile/assets/job_titles.txt")
-email_domain_txt = os.path.join(ROOT_DIR, "random_profile/assets/email_domains.txt")
+fname_txt = os.path.join(ASSETS_DIR, "fnames.txt")
+lname_txt = os.path.join(ASSETS_DIR, "lnames.txt")
+hair_colors_txt = os.path.join(ASSETS_DIR, "hair_colors.txt")
+blood_types_txt = os.path.join(ASSETS_DIR, "blood_types.txt")
+street_names_txt = os.path.join(ASSETS_DIR, "street_names.txt")
+cities_name_txt = os.path.join(ASSETS_DIR, "cities_name.txt")
+states_names_txt = os.path.join(ASSETS_DIR, "states_names.txt")
+job_titles_txt = os.path.join(ASSETS_DIR, "job_titles.txt")
+email_domain_txt = os.path.join(ASSETS_DIR, "email_domains.txt")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -41,7 +44,6 @@ street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
 email_domains = load_txt_file(email_domain_txt)
 
-print(type(fname))
 class RandomProfile:
     def __init__(self, num=1):
         '''
@@ -75,6 +77,7 @@ class RandomProfile:
             num = self.num
         profile_list = []
         for _ in range(num):
+            unique_id = uuid.uuid4().hex
             first = random.choice(fname)
             last = random.choice(lname)
             hair_color = random.choice(hair_colors)
@@ -98,6 +101,7 @@ class RandomProfile:
             email = first.lower() + last.lower() + '@' + email_domain
 
             profile_dict = {}
+            profile_dict['id'] = unique_id
             profile_dict['first_name'] = first
             profile_dict['last_name'] = last
             profile_dict['hair_color'] = hair_color
