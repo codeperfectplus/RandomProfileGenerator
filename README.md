@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">Python Module To Generater Random Profile Data</h4>
+<h4 align="center">Python Module To Generate Random Profile Data</h4>
 
 [RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 

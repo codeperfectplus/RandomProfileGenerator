@@ -1,2 +1,2 @@
 random-profile==0.2.3
-flask
+fastapi

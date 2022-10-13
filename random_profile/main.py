@@ -41,6 +41,7 @@ street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
 email_domains = load_txt_file(email_domain_txt)
 
+print(type(fname))
 class RandomProfile:
     def __init__(self, num=1):
         '''

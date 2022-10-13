@@ -1,5 +1,9 @@
 from datetime import datetime
 import random
+import os
+
+import logging
+logging.basicConfig(filename='log/example.log', encoding='utf-8', level=logging.DEBUG)
 
 def load_txt_file(file_name: str) -> list:
     """ function to load txt file into list
@@ -12,6 +16,9 @@ def load_txt_file(file_name: str) -> list:
     """
     with open(file_name, "r") as f:
         data = f.read().splitlines()
+    
+    basename = os.path.basename(file_name)
+    logging.debug(f"loaded {basename} with {len(data)} items")
     return data
 
 def ipv4_gen() -> str:
