@@ -31,7 +31,6 @@ street_names_txt = os.path.join(ASSETS_DIR, "street_names.txt")
 cities_name_txt = os.path.join(ASSETS_DIR, "cities_name.txt")
 states_names_txt = os.path.join(ASSETS_DIR, "states_names.txt")
 job_titles_txt = os.path.join(ASSETS_DIR, "job_titles.txt")
-email_domain_txt = os.path.join(ASSETS_DIR, "email_domains.txt")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -42,7 +41,6 @@ states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
-email_domains = load_txt_file(email_domain_txt)
 
 class RandomProfile:
     def __init__(self, num=1):
@@ -98,7 +96,7 @@ class RandomProfile:
             zip_code = random.randint(10000, 99999)
 
             address = f'{street_num} {street} St. {city} {state} {zip_code}'
-            email = first.lower() + last.lower() + '@' + email_domain
+            email = first.lower() + last.lower() + '@example.com'
 
             profile_dict = {}
             profile_dict['id'] = unique_id
