@@ -6,6 +6,17 @@
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
 
+<p align="center">
+<img src="https://img.shields.io/pypi/v/random-profile.svg">
+<img src="https://img.shields.io/pypi/pyversions/random-profile.svg">
+<img src="https://img.shields.io/pypi/l/random-profile.svg">
+</p>
+<p align="center">
+<img src="https://img.shields.io/pypi/dd/random-profile.svg">
+<img src="https://img.shields.io/pypi/dw/random-profile.svg">
+<img src="https://img.shields.io/pypi/dm/random-profile.svg">
+</p>
+
 [RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
 ## Installation
