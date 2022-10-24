@@ -36,7 +36,6 @@ states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
-email_domains = load_txt_file(email_domain_txt)
 
 
 class RandomProfile:
@@ -81,7 +80,6 @@ class RandomProfile:
             phone = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
-            email_domain = random.choice(email_domains)
 
             dob, age = generate_dob_age()
             height, weight = generate_random_height_weight()
@@ -93,7 +91,7 @@ class RandomProfile:
             zip_code = random.randint(10000, 99999)
 
             address = f'{street_num} {street} St. {city} {state} {zip_code}'
-            email = first.lower() + last.lower() + '@' + email_domain
+            email = first.lower() + last.lower() + '@example.com'
 
             profile_dict = {}
             profile_dict['id'] = unique_id
