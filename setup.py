@@ -16,11 +16,15 @@ setuptools.setup(
     url="https://github.com/codePerfectPlus/Random-Profile-Generator",
     packages=setuptools.find_packages(),
     classifiers=[
+        "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: Implementation :: PyPy",
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
+        "Environment :: Plugins",
+        
     ],
     entry_points={
         "console_scripts": ["random_profile = random_profile.__main__:main"],
