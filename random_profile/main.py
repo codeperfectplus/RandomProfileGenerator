@@ -37,7 +37,7 @@ street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
 
 
-class RandomProfile:
+class RandomProfile(object):
     def __init__(self, num: int = 1):
         '''
         num = Total No. of Name You Want To Print
