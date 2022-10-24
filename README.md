@@ -31,6 +31,8 @@ conda install random-profile # using anaconda
 
 ## Documentation
 
+### As Python Module
+
 ```python
 from random_profile import RandomProfile
 rp = RandomProfile(num=5)
@@ -39,7 +41,6 @@ rp = RandomProfile(num=5)
 num = Total No. of Name You Want To Print
 default is 1
 change the num value according to your needs.
-
 '''
 # num can be overwritten in the function
 
@@ -56,9 +57,32 @@ rp.full_profile(num=10)
 rp.last_name(num=6)
 ```
 
-## Usage
+### As Command Line Tool
 
-the random-profile module is a random profile generator for many usages like: ex- fake dataset, YouTube videos, content creation, personal projects.
+```bash
+$ random-profile --help
+Usage: random-profile [OPTIONS]
+
+usage: random_profile [-h] [-n N] [-f | -p | -l | -ip | -j]
+
+optional arguments:
+  -h, --help      show this help message and exit
+  -n N            Number of random profiles
+  -f, --fullname  Get full name instead of first name
+  -p, --profile   Get full profile instead of first name
+  -l, --lastname  Get last name instead of first name
+  -ip, --ipv4     Get an ipv4 IP address
+  -j, --jobtitle  Get job title
+```
+
+```bash
+$ random-profile -n 10 -f # to get 10 full names
+$ random-profile -n 10 -p # to get 10 full profiles
+$ random-profile -n 10 -l # to get 10 last names
+$ random-profile -n 10 -ip # to get 10 ipv4 addresses
+$ random-profile -n 10 -j # to get 10 job titles
+```
+
 
 ## Support
 
