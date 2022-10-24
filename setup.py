@@ -8,7 +8,7 @@ setuptools.setup(
     # Here is the module name.
     name="random_profile",
     # version of the module
-    version="0.2.3",
+    version="1.0.0",
     # Name of Author
     author="Deepak Raj",
     # your Email address

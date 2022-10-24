@@ -67,3 +67,40 @@ Real Estate Attorney
 Athlete Manager
 General Assistant
 3D Artist
+Computer Scientist
+IT Professional
+UX Designer & UI Developer
+SQL Developer
+Web Designer
+Help Desk Worker/Desktop Support
+Data Entry
+DevOps Engineer
+Computer Programmer
+Network Administrator
+Information Security Analyst
+Artificial Intelligence Engineer
+Cloud Architect
+IT Manager
+Technical Specialist
+Application Developer
+Chief Technology Officer (CTO)
+Chief Information Officer (CIO)
+Building Inspector
+Pipefitter
+Sheet Metal Worker
+Iron Worker
+Mason
+Roofer
+Solar Photovoltaic Installer
+Well Driller
+Payroll Clerk
+Financial Planner
+Financial Services Representative
+Finance Director
+Commercial Loan Officer
+Culture Operations Manager
+Director of Ethical Hacking
+Software Ninjaneer
+Director of Bean Counting
+Digital Overlord
+Director of Storytelling
