@@ -19,7 +19,7 @@ setuptools.setup(
     # Specifying that we are using markdown file for description
     long_description_content_type="text/markdown",
     # Any link to reach this module, if you have any webpage or github profile
-    data_files= [(  'assets', glob('random_profile/assets/*'))],
+    data_files=[('assets', glob('random_profile/assets/*'))],
     url="https://github.com/codePerfectPlus/Random-Profile-Generator",
     packages=setuptools.find_packages(),
     # classifiers like program is suitable for python3, just leave as it is.

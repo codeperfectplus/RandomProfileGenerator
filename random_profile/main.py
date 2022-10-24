@@ -3,12 +3,6 @@ python Random Profile generator module
 author : codeperfectplus
 language : python 3.0 ++
 github : codeperfectplus
-   ______            __         ____               ____             __     ____   __            
-  / ____/____   ____/ /___     / __ \ ___   _____ / __/___   _____ / /_   / __ \ / /__  __ _____
- / /    / __ \ / __  // _ \   / /_/ // _ \ / ___// /_ / _ \ / ___// __/  / /_/ // // / / // ___/
-/ /___ / /_/ // /_/ //  __/  / ____//  __// /   / __//  __// /__ / /_   / ____// // /_/ /(__  ) 
-\____/ \____/ \__,_/ \___/  /_/     \___//_/   /_/   \___/ \___/ \__/  /_/    /_/ \__,_//____/  
-
 '''
 
 import os
@@ -43,6 +37,7 @@ cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
 email_domains = load_txt_file(email_domain_txt)
+
 
 class RandomProfile:
     def __init__(self, num=1):
@@ -87,7 +82,7 @@ class RandomProfile:
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
             email_domain = random.choice(email_domains)
-            
+
             dob, age = generate_dob_age()
             height, weight = generate_random_height_weight()
 
@@ -123,7 +118,7 @@ class RandomProfile:
     def ipv4(self):
         ip_list = [ipv4_gen() for _ in range(self.num)]
         return ip_list
-    
+
     def job_title(self):
         job_title_list = [random.choice(job_titles) for _ in range(self.num)]
         return job_title_list
