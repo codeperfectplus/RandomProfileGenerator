@@ -23,9 +23,7 @@ setuptools.setup(
         "Operating System :: OS Independent",
         "Topic :: Software Development :: Libraries :: Python Modules",
         "Topic :: Utilities",
-        "Environment :: Plugins",
-        
-    ],
+        "Environment :: Plugins"],
     entry_points={
         "console_scripts": ["random_profile = random_profile.__main__:main"],
     },
