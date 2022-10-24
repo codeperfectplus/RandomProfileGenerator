@@ -60,7 +60,7 @@ rp.last_name(num=6)
 ### As Command Line Tool
 
 ```bash
-$ random-profile --help
+random-profile --help
 Usage: random-profile [OPTIONS]
 
 usage: random_profile [-h] [-n N] [-f | -p | -l | -ip | -j]
@@ -76,11 +76,11 @@ optional arguments:
 ```
 
 ```bash
-$ random-profile -n 10 -f # to get 10 full names
-$ random-profile -n 10 -p # to get 10 full profiles
-$ random-profile -n 10 -l # to get 10 last names
-$ random-profile -n 10 -ip # to get 10 ipv4 addresses
-$ random-profile -n 10 -j # to get 10 job titles
+random-profile -n 10 -f # to get 10 full names
+random-profile -n 10 -p # to get 10 full profiles
+random-profile -n 10 -l # to get 10 last names
+random-profile -n 10 -ip # to get 10 ipv4 addresses
+random-profile -n 10 -j # to get 10 job titles
 ```
 
 
