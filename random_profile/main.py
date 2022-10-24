@@ -25,7 +25,6 @@ street_names_txt = os.path.join(ASSETS_DIR, "street_names.txt")
 cities_name_txt = os.path.join(ASSETS_DIR, "cities_name.txt")
 states_names_txt = os.path.join(ASSETS_DIR, "states_names.txt")
 job_titles_txt = os.path.join(ASSETS_DIR, "job_titles.txt")
-email_domain_txt = os.path.join(ASSETS_DIR, "email_domains.txt")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -39,7 +38,7 @@ job_titles = load_txt_file(job_titles_txt)
 
 
 class RandomProfile:
-    def __init__(self, num=1):
+    def __init__(self, num: int = 1):
         '''
         num = Total No. of Name You Want To Print
         default is 1
@@ -47,26 +46,26 @@ class RandomProfile:
         '''
         self.num = num
 
-    def first_name(self, num=None):
+    def first_name(self, num: int = None) -> list:
         if num is None:
             num = self.num
         first_name_list = [random.choice(fname) for _ in range(num)]
         return first_name_list
 
-    def last_name(self, num=None):
+    def last_name(self, num: int = None) -> list:
         if num is None:
             num = self.num
         last_name_list = [random.choice(lname) for _ in range(num)]
         return last_name_list
 
-    def full_name(self, num=None):
+    def full_name(self, num: int = None) -> list:
         if num is None:
             num = self.num
         full_name_list = [random.choice(
             fname) + ' ' + random.choice(lname) for _ in range(num)]
         return full_name_list
 
-    def full_profile(self, num=None):
+    def full_profile(self, num: int = None) -> list:
         if num is None:
             num = self.num
         profile_list = []
@@ -113,10 +112,10 @@ class RandomProfile:
 
         return profile_list
 
-    def ipv4(self):
+    def ipv4(self) -> list:
         ip_list = [ipv4_gen() for _ in range(self.num)]
         return ip_list
 
-    def job_title(self):
+    def job_title(self) -> list:
         job_title_list = [random.choice(job_titles) for _ in range(self.num)]
         return job_title_list

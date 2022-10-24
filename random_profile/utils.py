@@ -28,7 +28,7 @@ def ipv4_gen() -> str:
     return f"{random.randint(0,255)}.{random.randint(0,255)}.{random.randint(0,255)}.{random.randint(0,255)}"
 
 
-def generate_dob_age():
+def generate_dob_age() -> tuple:
     month = random.randint(1, 12)
     if month == 2:  # if month is feb
         day = random.randint(1, 28)
@@ -44,10 +44,10 @@ def generate_dob_age():
     age = (datetime.now() - dob).days // 365
     dob = dob.strftime("%d/%m/%Y")
 
-    return dob, age
+    return (dob, age)
 
 
-def generate_random_height_weight():
+def generate_random_height_weight() -> tuple:
     height = random.randint(140, 200)
     if height < 150:
         weight = random.randint(40, 60)
@@ -61,4 +61,4 @@ def generate_random_height_weight():
         weight = random.randint(80, 100)
     elif height <= 200:
         weight = random.randint(90, 110)
-    return height, weight
+    return (height, weight)
