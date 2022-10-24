@@ -3,12 +3,6 @@ python Random Profile generator module
 author : codeperfectplus
 language : python 3.0 ++
 github : codeperfectplus
-   ______            __         ____               ____             __     ____   __            
-  / ____/____   ____/ /___     / __ \ ___   _____ / __/___   _____ / /_   / __ \ / /__  __ _____
- / /    / __ \ / __  // _ \   / /_/ // _ \ / ___// /_ / _ \ / ___// __/  / /_/ // // / / // ___/
-/ /___ / /_/ // /_/ //  __/  / ____//  __// /   / __//  __// /__ / /_   / ____// // /_/ /(__  ) 
-\____/ \____/ \__,_/ \___/  /_/     \___//_/   /_/   \___/ \___/ \__/  /_/    /_/ \__,_//____/  
-
 '''
 
 import os
@@ -31,6 +25,7 @@ street_names_txt = os.path.join(ASSETS_DIR, "street_names.txt")
 cities_name_txt = os.path.join(ASSETS_DIR, "cities_name.txt")
 states_names_txt = os.path.join(ASSETS_DIR, "states_names.txt")
 job_titles_txt = os.path.join(ASSETS_DIR, "job_titles.txt")
+email_domain_txt = os.path.join(ASSETS_DIR, "email_domains.txt")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -41,6 +36,7 @@ states_names = load_txt_file(states_names_txt)
 cities_name = load_txt_file(cities_name_txt)
 street_names = load_txt_file(street_names_txt)
 job_titles = load_txt_file(job_titles_txt)
+
 
 class RandomProfile:
     def __init__(self, num=1):
@@ -84,8 +80,7 @@ class RandomProfile:
             phone = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
             job_title = random.choice(job_titles)
             ip_address = ipv4_gen()
-            email_domain = random.choice(email_domains)
-            
+
             dob, age = generate_dob_age()
             height, weight = generate_random_height_weight()
 
@@ -121,7 +116,7 @@ class RandomProfile:
     def ipv4(self):
         ip_list = [ipv4_gen() for _ in range(self.num)]
         return ip_list
-    
+
     def job_title(self):
         job_title_list = [random.choice(job_titles) for _ in range(self.num)]
         return job_title_list
