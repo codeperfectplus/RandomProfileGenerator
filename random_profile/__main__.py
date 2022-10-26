@@ -1,4 +1,4 @@
-from .main import RandomProfile
+from audiobook.main import RandomProfile
 import argparse
 
 
