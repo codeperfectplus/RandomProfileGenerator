@@ -4,6 +4,12 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Changelog
 
+## [Unreleased] 
+
+- Moved test files to random_profile to avoid flake8:402 error
+- Following proper changelog format, added changelog file
+- Added config for readthedocs
+
 ## [v0.2.3] - 13-10-2022
 
 - Flask app added
