@@ -4,6 +4,7 @@ import os
 import logging
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
 logging.basicConfig(filename='log/example.log', encoding='utf-8', level=logging.DEBUG)
 
 

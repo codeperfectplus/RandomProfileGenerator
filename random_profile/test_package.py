@@ -1,9 +1,6 @@
 import unittest
+
 from random_profile import RandomProfile
-
-import sys
-sys.path.append('.')
-
 random_profile = RandomProfile(num=1)
 
 

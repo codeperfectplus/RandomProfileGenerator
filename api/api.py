@@ -10,14 +10,17 @@ rp = RandomProfile()
 app = FastAPI()
 
 query_model = create_model("num", num=(int, ...))
+api_version = "0.2.3"
 
 
 @app.get("/")
 def index():
-    return {"status": "200", "message": "Welcome to Random Profile Generator API", "version": "0.2.3"}
+    return {"status": "200",
+            "message": "Welcome to Random Profile Generator API",
+            "version": api_version}
 
 
-@app.get('/api/v1/random_profile')
+@app.get('/api/v1/random_profile/full_profile')
 async def multiple_profile(params: query_model = Depends()):
     """ Get multiple profile with all details
 
@@ -26,7 +29,10 @@ async def multiple_profile(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400", "message": "Number of profiles should be less than 100"}
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
     num = params_as_dict['num']
     profile = rp.full_profile(num)
     return profile
@@ -42,7 +48,10 @@ async def multiple_first_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400", "message": "Number of profiles should be less than 100"}
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
     num = params_as_dict['num']
     first_names = rp.first_name(num)
     return first_names
@@ -58,7 +67,10 @@ async def multiple_last_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400", "message": "Number of profiles should be less than 100"}
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
     num = params_as_dict['num']
     last_names = rp.last_name(num)
     return last_names
@@ -74,7 +86,10 @@ async def multiple_full_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400", "message": "Number of profiles should be less than 100"}
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
     num = params_as_dict['num']
 
     full_names = rp.full_name(num)
@@ -86,7 +101,7 @@ def custom_openapi():
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Random Profile Generator API",
-        version="0.2.3",
+        version=api_version,
         description="Python Module To Generate Random Profile Data",
         routes=app.routes,
     )
