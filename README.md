@@ -1,7 +1,8 @@
 <h1 align="center">
-  <br>
-  Random Profile Generator V0.2.3
-  <br>
+  <a href="https://pypi.org/project/random-profile/">
+  Random Profile Generator
+  </a>
+  V0.2.3
 </h1>
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
@@ -10,6 +11,7 @@
 <img src="https://img.shields.io/pypi/v/random-profile.svg">
 <img src="https://img.shields.io/pypi/pyversions/random-profile.svg">
 <img src="https://img.shields.io/pypi/l/random-profile.svg">
+
 </p>
 <p align="center">
 <img src="https://img.shields.io/pypi/dd/random-profile.svg">
