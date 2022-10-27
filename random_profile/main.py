@@ -13,9 +13,7 @@ from random_profile.utils import ipv4_gen
 from random_profile.utils import load_txt_file
 from random_profile.utils import generate_dob_age
 from random_profile.utils import generate_random_height_weight
-from random_profile.utils import ROOT_DIR
-
-ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
+from random_profile.utils import ASSETS_DIR
 
 fname_txt = os.path.join(ASSETS_DIR, "fnames.txt")
 lname_txt = os.path.join(ASSETS_DIR, "lnames.txt")
