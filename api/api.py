@@ -100,7 +100,7 @@ def custom_openapi():
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Random Profile Generator API",
-        version="0.2.3",
+        version=api_version,
         description="Python Module To Generate Random Profile Data",
         routes=app.routes,
     )
