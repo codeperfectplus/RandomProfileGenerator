@@ -1,3 +1,9 @@
+<p align="center"> 
+<img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/Py-Contributors/RandomProfileGenerator">
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator"> 
+<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator"> 
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Py-Contributors/RandomProfileGenerator"> </p>
+
 <h1 align="center">
   <a href="https://pypi.org/project/random-profile/">
   Random Profile Generator
