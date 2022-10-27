@@ -6,18 +6,11 @@
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
 
-<p align="center">
-<img src="https://img.shields.io/pypi/v/random-profile.svg">
-<img src="https://img.shields.io/pypi/pyversions/random-profile.svg">
-<img src="https://img.shields.io/pypi/l/random-profile.svg">
-</p>
-<p align="center">
-<img src="https://img.shields.io/pypi/dd/random-profile.svg">
-<img src="https://img.shields.io/pypi/dw/random-profile.svg">
-<img src="https://img.shields.io/pypi/dm/random-profile.svg">
-</p>
+[Random Profile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
-[RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
+## Usage
+
+the random-profile module is a random profile generator for many usages like: ex- fake dataset, YouTube videos, content creation, personal projects.
 
 ## Installation
 
@@ -33,77 +26,39 @@ conda install random-profile # using anaconda
 
 ```python
 from random_profile import RandomProfile
-rp = RandomProfile(num=5)
-'''
-
-num = Total No. of Name You Want To Print
-default is 1
-change the num value according to your needs.
-
-'''
-# num can be overwritten in the function
-
-# For first name
-rp.first_name(num=10)
-
-# For full name
-rp.full_name(num=8)
-
-# override the num value
-rp.full_profile(num=10)
-
-# For last name
-rp.last_name(num=6)
+rp = RandomProfile()
 ```
 
-## Usage
+### Get first name
 
-the random-profile module is a random profile generator for many usages like: ex- fake dataset, YouTube videos, content creation, personal projects.
+```python
+rp.first_name(num=10)
+```
 
-## Support
+```bash
+['Brooks', 'Ameer', 'Fletcher', 'Amiri', 'Mathew', 'Finnley', 'Raphael', 'Omar', 'Karter', 'Jesiah']
+```
 
-Contributors for the Project
-[CodePerfectPLus](https://github.com/codePerfectPlus)
-...
+### Get full name
 
-## Roadmap
+```python
+# For full name
+rp.full_name(num=8)
+```
 
-what's new in future update
+```bash
+['Brooks Mccullough', 'Ameer Mccullough', 'Fletcher Mccullough', 'Amiri Mccullough', 'Mathew Mccullough', 'Finnley Mccullough', 'Raphael Mccullough', 'Omar Mccullough']
+```
 
-- More Random data will be added to package.
-- Variety of Random-Data will increase.
+### Get full profile
 
-## Changelog
+```python
+rp.full_profile(num=1)
+```
 
-v0.2.3
-- Flask app added
-- Date of Birth Added
-- Age added
-- Height and Weight Added
-- Blood Group and hair color added
-- Job title added
-- More email domains added
-- Bugs Fixed
-
-v0.2.1
-- More variation added to the data
-- Test cases added
-- Created a separate file for data loadings
-- Fixed some bugs
-
-## Contributing
-
-Before submitting a bug, please do the following:
-
-Perform basic troubleshooting steps:
-
-- Make sure you are on the latest version. If you are not on the most recent version, your problem may have been solved already! Upgrading is always the best first step.
-- Try older versions. If you are already on the latest release, try rolling back a few minor versions (e.g. if on 1.7, try 1.5 or 1.6) and see if the problem goes away. This will help the devs narrow down when the problem first arose in the commit log.
-- Try switching up dependency versions. If the software in question has dependencies (other libraries, etc) try upgrading and downgrading those dependencies as well.
-
-## Authors and acknowledgment
-
-Show your appreciation to those who have contributed to the project.
+```bash
+[{'first_name': 'Yadiel', 'last_name': 'Morton', 'hair_color': 'brown', 'blood_type': '(AB+)', 'full_name': 'Yadiel Morton', 'DOB': '23/05/2004', 'age': 18, 'height': 143, 'weight': 49, 'phone': '+1-429-996-9609', 'address': '497 Elm St. Springfield WY 73547', 'email': 'yadielmorton@aol.de', 'job_title': 'Game Developer', 'ip_address': '235.8.137.166'}]
+```
 
 ## License
 
