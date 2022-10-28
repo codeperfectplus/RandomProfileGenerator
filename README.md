@@ -1,8 +1,3 @@
-<p align="center"> 
-<img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/Py-Contributors/RandomProfileGenerator">
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator"> 
-<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator"> 
-<img alt="GitHub stars" src="https://img.shields.io/github/stars/Py-Contributors/RandomProfileGenerator"> </p>
 
 <h1 align="center">
   <a href="https://pypi.org/project/random-profile/">
@@ -24,6 +19,16 @@
 <img src="https://img.shields.io/pypi/dw/random-profile.svg">
 <img src="https://img.shields.io/pypi/dm/random-profile.svg">
 </p>
+<p align="center"> 
+
+<img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/Py-Contributors/RandomProfileGenerator">
+
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator"> 
+
+<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator"> 
+
+<img alt="GitHub stars" src="https://img.shields.io/github/stars/Py-Contributors/RandomProfileGenerator"> </p>
+
 
 [RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
