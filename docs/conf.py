@@ -1,9 +1,11 @@
 from datetime import datetime
 
-project = 'audiobook'
+
+project = 'Random Profile Generator'
+description = 'A random profile generator for testing purposes.'
 copyright = '2022, Deeapk Raj'
 author = 'Deeapk Raj'
-release = '2.0.4'
+release = '0.2.3'
 
 extensions = [
     'sphinx.ext.autosectionlabel'

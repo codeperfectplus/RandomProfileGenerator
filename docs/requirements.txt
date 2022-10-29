@@ -1,4 +1,5 @@
 sphinx
-livereload
 sphinx-rtd-theme
-pydata_sphinx_theme
+
+#livereload
+#pydata_sphinx_theme
