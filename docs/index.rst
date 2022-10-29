@@ -10,13 +10,13 @@ Welcome to RandomProfileGenerator's documentation!
 
 |PyPI download month|
 
-.. |PyPI download month| image:: https://img.shields.io/pypi/dm/RandomProfileGenerator.svg
-   :target: https://pypi.python.org/pypi/RandomProfileGenerator/
+.. |PyPI download month| image:: https://img.shields.io/pypi/dm/random_profile.svg
+   :target: https://pypi.python.org/pypi/random_profile/
 
 |PyPI version fury.io|
 
-.. |PyPI version fury.io| image:: https://badge.fury.io/py/RandomProfileGenerator.svg
-   :target: https://pypi.python.org/pypi/RandomProfileGenerator/
+.. |PyPI version fury.io| image:: https://badge.fury.io/py/random_profile.svg
+   :target: https://pypi.python.org/pypi/random_profile/
    
 |Open Source Love svg3|
 
