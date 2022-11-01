@@ -1,0 +1,5 @@
+sphinx
+sphinx-rtd-theme
+
+#livereload
+#pydata_sphinx_theme

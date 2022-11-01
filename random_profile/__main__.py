@@ -1,4 +1,4 @@
-from .main import RandomProfile
+from audiobook.main import RandomProfile
 import argparse
 
 
@@ -52,7 +52,7 @@ def main():
     elif args.ipv4:
         print(*rp.ipv4(), sep="\n")
     else:
-        print(*rp.first_name())
+        print('Type `random_profile -h` for help')
 
 
 if __name__ == "__main__":
