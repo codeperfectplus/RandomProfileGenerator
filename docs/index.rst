@@ -10,7 +10,7 @@ Welcome to RandomProfileGenerator's documentation!
 
 |Total download|
 
-.. |Total download| image:: http://pepy.tech/badge/pickledb
+.. |Total download| image:: http://pepy.tech/badge/random_profile
    :target: https://pypi.python.org/pypi/random_profile/
 
 |PyPI version fury.io|
