@@ -72,6 +72,13 @@ Get Random Profile and Save to File:
     # n = number of random profiles, p = profile
     random_profile -n 10 -p > random_profiles.txt
 
+.. code-block:: bash
+
+    # save to a file
+    # n = number of random profiles, p = profile
+    random_profile -n 10 -p >> random_profiles.txt
+
+
 Get Random Profile version:
 ---------------------------
 
