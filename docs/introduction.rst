@@ -18,9 +18,3 @@ Use cases
 - Generating fake data for your demo
 - Generating fake data for your blog post
 
-Upcoming features
-------------
-
-- Support for more languages (Javascript)
-
-

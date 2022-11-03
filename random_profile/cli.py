@@ -2,6 +2,7 @@ from random_profile.main import RandomProfile
 import argparse
 from pprint import pprint
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("-n", help="Number of random profiles", type=int, default=1)
