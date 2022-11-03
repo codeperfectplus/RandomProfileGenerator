@@ -25,6 +25,6 @@ setuptools.setup(
         "Topic :: Utilities",
         "Environment :: Plugins"],
     entry_points={
-        "console_scripts": ["random_profile = random_profile.__main__:main"],
+        "console_scripts": ["random_profile = random_profile.cli:main"],
     },
 )

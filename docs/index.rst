@@ -6,11 +6,11 @@
 .. rst-class:: hide-header
 
 Welcome to RandomProfileGenerator's documentation!
-=====================================
+=================================================
 
 |PyPI download month|
 
-.. |PyPI download month| image:: https://img.shields.io/pypi/dm/random_profile.svg
+.. |PyPI download month| image:: http://pepy.tech/badge/pickledb
    :target: https://pypi.python.org/pypi/random_profile/
 
 |PyPI version fury.io|
@@ -42,20 +42,14 @@ If you love open source contributions.
 * join the community on `Github <https://github.com/Py-Contributors/support/issues/new?assignees=&labels=invite+me+to+the+organisation&template=invite.yaml&title=Please+invite+me+to+the+GitHub+Community+Organization>`_.
 
 Other Projects by Py-Contributors:
---------------
+---------------------------------
 
 * `AudioBook <https://audiobook.readthedocs.io/en/latest//>`_
 * `Cybel - The Discord Bot <https://github.com/Py-Contributors/Cybel>`_
 * `Twitterify - Tweet-retweet bot <https://github.com/Py-Contributors/twitterify>`_
 
-|forthebadge made-with-python|
-
-.. |forthebadge made-with-python| image:: http://ForTheBadge.com/images/badges/made-with-python.svg
-   :target: https://www.python.org/
-
-
 .. toctree::
-   :hidden:
+   :maxdepth: 2
 
    introduction.rst
    installation.rst

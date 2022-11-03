@@ -23,7 +23,7 @@ fi
 
 
 # run sdists and wheels
-python3 setup.py sdist bdist_wheel
+#python3 setup.py sdist bdist_wheel
 
 # check for dist folder
 if ! [ -d "dist" ]; then

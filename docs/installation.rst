@@ -1,8 +1,8 @@
 Installation
-=========
+============
 
 Install Via Pip(recommended):
-------------
+----------------------------
     
 .. code-block:: bash
 
@@ -11,7 +11,7 @@ Install Via Pip(recommended):
 
 
 Install from Source(Unreleased):
-------------
+--------------------------------
 
 .. code-block:: bash
 
@@ -20,7 +20,7 @@ Install from Source(Unreleased):
     python setup.py install
 
 Test Installation:
-------------
+-----------------
 
 .. code-block:: bash
 
