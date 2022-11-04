@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="random_profile",
-    version="0.2.4",
+    version="1.0.0",
     author="Deepak Raj",
     author_email="deepak008@live.com",
     description="Generate Random Profile",

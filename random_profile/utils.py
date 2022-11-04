@@ -5,7 +5,7 @@ import logging
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
-logging.basicConfig(filename='log/example.log', level=logging.DEBUG)
+logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 
 def load_txt_file(file_name: str) -> list:
