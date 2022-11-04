@@ -3,7 +3,7 @@
   <a href="https://pypi.org/project/random-profile/">
   Random Profile Generator
   </a>
-  V0.2.3
+  V0.2.4
 </h1>
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
