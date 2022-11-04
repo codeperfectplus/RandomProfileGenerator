@@ -1,5 +1,5 @@
 Command line usages
-=========
+===================
 
 `Random Profile Generator` can be used as a command line tool. 
 It can be used to generate a random profile and save it to a file. 
@@ -25,7 +25,7 @@ Usages:
         -j, --jobtitle  Get job title
     
 Get Random Profile:
-------------
+-------------------
 
 .. code-block:: bash
 
@@ -33,7 +33,7 @@ Get Random Profile:
     random_profile -n 10 -p
 
 Get First Name:
-------------
+---------------
 
 .. code-block:: bash
 
@@ -41,7 +41,7 @@ Get First Name:
     random_profile -n 10 -f 
 
 Get Last Name:
-------------
+--------------
 
 .. code-block:: bash
 
@@ -49,7 +49,7 @@ Get Last Name:
     random_profile -n 10 -l
 
 Get Job Title:
-------------
+--------------
 
 .. code-block:: bash
 
@@ -57,7 +57,7 @@ Get Job Title:
     random_profile -n 10 -j
 
 Get IPv4 Address:
-------------
+-----------------
 
 .. code-block:: bash
 
@@ -65,15 +65,22 @@ Get IPv4 Address:
     random_profile -n 10 -ip
 
 Get Random Profile and Save to File:
-------------
+------------------------------------
 
 .. code-block:: bash
 
     # n = number of random profiles, p = profile
     random_profile -n 10 -p > random_profiles.txt
 
+.. code-block:: bash
+
+    # save to a file
+    # n = number of random profiles, p = profile
+    random_profile -n 10 -p >> random_profiles.txt
+
+
 Get Random Profile version:
-------------
+---------------------------
 
 .. code-block:: bash
 

@@ -4,11 +4,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Changelog
 
-## [Unreleased] 
+## [0.2.4] 
 
+- Beautiful command line output
 - Moved test files to random_profile to avoid flake8:402 error
 - Following proper changelog format, added changelog file
-- Added config for readthedocs
+- Docs: Added documentation for the project
+- Bug fixed: Fixed a bug with random_profile import
 
 ## [v0.2.3] - 13-10-2022
 

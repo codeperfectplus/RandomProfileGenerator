@@ -1,5 +1,6 @@
-from audiobook.main import RandomProfile
+from random_profile.main import RandomProfile
 import argparse
+from pprint import pprint
 
 
 def main():
@@ -42,17 +43,17 @@ def main():
 
     rp = RandomProfile(args.n)
     if args.fullname:
-        print(*rp.full_name(), sep="\n")
+        pprint(rp.full_name())
     elif args.profile:
-        print(*rp.full_profile(), sep="\n")
+        pprint(rp.full_profile())
     elif args.lastname:
-        print(*rp.last_name(), sep="\n")
+        pprint(rp.last_name())
     elif args.jobtitle:
-        print(*rp.job_title(), sep="\n")
+        pprint(rp.job_title())
     elif args.ipv4:
-        print(*rp.ipv4(), sep="\n")
+        pprint(rp.ipv4())
     else:
-        print('Type `random_profile -h` for help')
+        pprint('Type `random_profile -h` for help')
 
 
 if __name__ == "__main__":
