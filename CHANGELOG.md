@@ -4,7 +4,7 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Changelog
 
-## [0.2.4] 
+## [1.0.0] - 05-11-2022
 
 - Beautiful command line output
 - Moved test files to random_profile to avoid flake8:402 error
