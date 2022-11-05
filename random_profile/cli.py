@@ -1,11 +1,20 @@
-from random_profile.main import RandomProfile
+
+import sys
 import argparse
 from pprint import pprint
 
+sys.path.append('.')
+from random_profile.main import RandomProfile
+from random_profile.api import start_server
+
+version = "random_profile==1.0.1"
 
 def main():
     parser = argparse.ArgumentParser()
+    parser.add_argument('-v', '--version', action='version', version=version)
     parser.add_argument("-n", help="Number of random profiles", type=int, default=1)
+    parser.add_argument("--server", help="Start server", action="store_true")
+    parser.add_argument("--port", help="Port number", type=int, default=8000)
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
@@ -41,6 +50,9 @@ def main():
 
     args = parser.parse_args()
 
+    if args.server:
+        start_server(args.port)
+    
     rp = RandomProfile(args.n)
     if args.fullname:
         pprint(rp.full_name())
@@ -53,7 +65,7 @@ def main():
     elif args.ipv4:
         pprint(rp.ipv4())
     else:
-        pprint('Type `random_profile -h` for help')
+        pprint('Type `rp -h` for help')
 
 
 if __name__ == "__main__":

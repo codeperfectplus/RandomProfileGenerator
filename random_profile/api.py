@@ -1,9 +1,11 @@
+import sys
 import uvicorn
 from fastapi import FastAPI, Depends
 from fastapi.openapi.utils import get_openapi
-
 from pydantic import create_model
-from random_profile import RandomProfile
+
+sys.path.append('.')
+from random_profile.main import RandomProfile
 
 # random_profile==0.2.3 required
 rp = RandomProfile()
@@ -96,6 +98,43 @@ async def multiple_full_name(params: query_model = Depends()):
     return full_names
 
 
+@app.get('/api/v1/random_profile/ip_address')
+async def multiple_ip_address(params: query_model = Depends()):
+    """ Get multiple ip addresses
+
+    args:
+        num (int): number of ip addresses to generate
+
+    """
+    params_as_dict = params.dict()
+    if params_as_dict['num'] > 100:
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
+    num = params_as_dict['num']
+    ip_addresses = rp.ipv4(num)
+    return ip_addresses 
+
+
+@app.get("/api/v1/random_profile/job_title")
+async def multiple_job_title(params: query_model = Depends()):
+    """ Get multiple job titles
+
+    args:
+        num (int): number of job titles to generate
+
+    """
+    params_as_dict = params.dict()
+    if params_as_dict['num'] > 100:
+        return {"status": "400",
+                "message": "Number of profiles should be less than 100",
+                "version": api_version}
+
+    num = params_as_dict['num']
+    job_titles = rp.job_title(num)
+    return job_titles
+
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
@@ -114,5 +153,5 @@ def custom_openapi():
 
 app.openapi = custom_openapi
 
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+def start_server(port=8000):
+    uvicorn.run(app, host="0.0.0.0", port=port)
