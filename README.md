@@ -37,6 +37,8 @@
 
 Documentation is available at [ReadTheDocs](https://randomprofilegenerator.readthedocs.io/en/latest/)
 
+![RandomProfile](/docs/assets/sample.png)
+
 ## Upcoming Features
 
 - Support for more languages

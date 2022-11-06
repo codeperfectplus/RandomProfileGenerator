@@ -1,11 +1,9 @@
 from datetime import datetime
 import random
 import os
-import logging
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
-logging.basicConfig(filename='example.log', level=logging.DEBUG)
 
 
 def load_txt_file(file_name: str) -> list:
@@ -19,9 +17,6 @@ def load_txt_file(file_name: str) -> list:
     """
     with open(file_name, "r") as f:
         data = f.read().splitlines()
-
-    basename = os.path.basename(file_name)
-    logging.debug(f"loaded {basename} with {len(data)} items")
     return data
 
 

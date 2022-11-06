@@ -4,10 +4,9 @@ import argparse
 from pprint import pprint
 
 sys.path.append('.')
-from random_profile.main import RandomProfile
+from random_profile.main import RandomProfile, version
 from random_profile.api import start_server
 
-version = "random_profile==1.0.1"
 
 def main():
     parser = argparse.ArgumentParser()
@@ -47,23 +46,30 @@ def main():
         help="Get job title",
         action="store_true",
     )
+    group.add_argument(
+        "-a",
+        "--address",
+        help="Get address",
+        action="store_true",
+    )
 
     args = parser.parse_args()
 
     if args.server:
         start_server(args.port)
-    
     rp = RandomProfile(args.n)
     if args.fullname:
         pprint(rp.full_name())
-    elif args.profile:
-        pprint(rp.full_profile())
     elif args.lastname:
         pprint(rp.last_name())
     elif args.jobtitle:
         pprint(rp.job_title())
     elif args.ipv4:
         pprint(rp.ipv4())
+    elif args.address:
+        pprint(rp.generate_address())
+    elif args.profile:
+        pprint(rp.full_profile())
     else:
         pprint('Type `rp -h` for help')
 

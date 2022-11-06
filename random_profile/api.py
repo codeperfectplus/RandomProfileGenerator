@@ -5,25 +5,33 @@ from fastapi.openapi.utils import get_openapi
 from pydantic import create_model
 
 sys.path.append('.')
-from random_profile.main import RandomProfile
+from random_profile.main import RandomProfile, version
 
 # random_profile==0.2.3 required
 rp = RandomProfile()
 app = FastAPI()
 
 query_model = create_model("num", num=(int, ...))
-api_version = "0.2.3"
+
+metadata = {
+    "status": "200",
+    "message": "Success",
+    "version": version,
+    "author": "Deepak Raj",
+    "author_email": "deepak008@live.com",
+    "github": "https://github.com/codeperfectplus"
+    }
+
+overloaded_error = {"status": "400", "message": "Number of profiles should be less than 100"}
 
 
 @app.get("/")
 def index():
-    return {"status": "200",
-            "message": "Welcome to Random Profile Generator API",
-            "version": api_version}
+    return metadata
 
 
 @app.get('/api/v1/random_profile/full_profile')
-async def multiple_profile(params: query_model = Depends()):
+async def get_full_profile(params: query_model = Depends()):
     """ Get multiple profile with all details
 
     args:
@@ -31,17 +39,16 @@ async def multiple_profile(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
+        return overloaded_error
 
     num = params_as_dict['num']
     profile = rp.full_profile(num)
-    return profile
+    metadata['data'] = profile
+    return metadata
 
 
 @app.get('/api/v1/random_profile/first_name')
-async def multiple_first_name(params: query_model = Depends()):
+async def get_first_name(params: query_model = Depends()):
     """ Get multiple first names
 
     args:
@@ -50,17 +57,16 @@ async def multiple_first_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
-
+        return overloaded_error
+    
     num = params_as_dict['num']
     first_names = rp.first_name(num)
-    return first_names
+    metadata['data'] = first_names
+    return metadata
 
 
 @app.get('/api/v1/random_profile/last_name')
-async def multiple_last_name(params: query_model = Depends()):
+async def get_last_name(params: query_model = Depends()):
     """ Get multiple last names
 
     args:
@@ -69,17 +75,16 @@ async def multiple_last_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
+        return overloaded_error
 
     num = params_as_dict['num']
     last_names = rp.last_name(num)
-    return last_names
+    metadata['data'] = last_names
+    return metadata
 
 
 @app.get('/api/v1/random_profile/full_name')
-async def multiple_full_name(params: query_model = Depends()):
+async def get_full_name(params: query_model = Depends()):
     """ Get multiple full names
 
     args:
@@ -88,18 +93,16 @@ async def multiple_full_name(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
+        return overloaded_error
 
     num = params_as_dict['num']
-
     full_names = rp.full_name(num)
-    return full_names
+    metadata['data'] = full_names
+    return metadata
 
 
 @app.get('/api/v1/random_profile/ip_address')
-async def multiple_ip_address(params: query_model = Depends()):
+async def get_ip_address(params: query_model = Depends()):
     """ Get multiple ip addresses
 
     args:
@@ -108,17 +111,16 @@ async def multiple_ip_address(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
+        return overloaded_error
 
     num = params_as_dict['num']
     ip_addresses = rp.ipv4(num)
-    return ip_addresses 
+    metadata['data'] = ip_addresses
+    return metadata
 
 
 @app.get("/api/v1/random_profile/job_title")
-async def multiple_job_title(params: query_model = Depends()):
+async def get_job_title(params: query_model = Depends()):
     """ Get multiple job titles
 
     args:
@@ -127,25 +129,35 @@ async def multiple_job_title(params: query_model = Depends()):
     """
     params_as_dict = params.dict()
     if params_as_dict['num'] > 100:
-        return {"status": "400",
-                "message": "Number of profiles should be less than 100",
-                "version": api_version}
+        return overloaded_error
 
     num = params_as_dict['num']
     job_titles = rp.job_title(num)
-    return job_titles
+    metadata['data'] = job_titles
+    return metadata
+
+@app.get("/api/v1/random_profile/address")
+async def get_address(params: query_model = Depends()):
+    """ Get multiple address """
+    params_as_dict = params.dict()
+    if params_as_dict['num'] > 100:
+        return overloaded_error
+    num = params_as_dict['num']
+    address = rp.generate_address(num)
+    metadata['data'] = address
+    return metadata
 
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Random Profile Generator API",
-        version=api_version,
+        version=metadata['version'],
         description="Python Module To Generate Random Profile Data",
         routes=app.routes,
     )
     openapi_schema["info"]["x-logo"] = {
-        "url": "https://fastapi.tiangolo.com/img/logo-margin/logo-teal.png"
+        "url": "https://raw.githubusercontent.com/DrakeEntity/project-Image/master/9b2ca712-347a-4987-bac7-a4c3d106ed24_200x200.png"
     }
     app.openapi_schema = openapi_schema
     return app.openapi_schema
