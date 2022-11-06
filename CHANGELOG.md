@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Changelog
 
+## [1.0.1] - 
+
+- server can be start from cli
+- More Endpoints exposed to the API/CLI
+- Code refactored
+
+
 ## [1.0.0] - 05-11-2022
 
 - Beautiful command line output
