@@ -9,22 +9,18 @@ from random_profile.api import start_server
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-v', '--version', action='version', version=VERSION)
-parser.add_argument("--server", help="Start server", action="store_true")
-parser.add_argument("--port", help="Port number", type=int, default=8000)
-parser.add_argument("-n", help="Number of random profiles", type=int, default=1)
+parser.add_argument('--server', help='Start server', action='store_true')
+parser.add_argument('--port', help='Port number', type=int, default=8000)
+parser.add_argument('-n', help='Number of random profiles', type=int, default=1)
 
 group = parser.add_mutually_exclusive_group()
-group.add_argument("--profile", help="Get full profile", action="store_true")
-group.add_argument("--firstname", help="Get first name", action="store_true")
-group.add_argument("--lastname", help="Get last name instead of first name", action="store_true")
-group.add_argument("--fullname", help="Get full name instead of first name", action="store_true")
-group.add_argument("--ip", help="Get an ipv4 IP address", action="store_true")
-group.add_argument("--job", help="Get job title", action="store_true")
-group.add_argument("--address", help="Get address", action="store_true")
-group.add_argument("--phone", help="Get phone number", action="store_true")
-group.add_argument("--city", help="Get city", action="store_true")
-group.add_argument("--state", help="Get state", action="store_true")
-group.add_argument("--postal", help="Get postal code", action="store_true")
+group.add_argument('-p', '--profile', help='Get full profile', action='store_true')
+group.add_argument('-f', '--firstname', help='Get first name', action='store_true')
+group.add_argument('-l', '--lastname', help='Get last name instead of first name', action='store_true')
+group.add_argument('--fullname', help='Get full name instead of first name', action='store_true')
+group.add_argument('--ip', help='Get an ipv4 IP address', action='store_true')
+group.add_argument('--job', help='Get job title', action='store_true')
+group.add_argument('--address', help='Get address', action='store_true')
 args = parser.parse_args()
 
 
@@ -46,17 +42,9 @@ def main():
         pprint(rp.generate_address())
     elif args.profile:
         pprint(rp.full_profile())
-    elif args.phone:
-        pprint(rp.phone_number())
-    elif args.city:
-        pprint(rp.city())
-    elif args.postal:
-        pprint(rp.postal_code())
-    elif args.state:
-        pprint(rp.state())
     else:
         pprint('Type `rp -h` for help')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()

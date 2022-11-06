@@ -67,55 +67,57 @@ class RandomProfile(object):
 
     def first_name(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return random.choice(fname)
         return random.choices(fname, k=num)
 
     def last_name(self, num: int = None) -> list:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return random.choice(lname)
         return random.choices(lname, k=num)
 
     def full_name(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return f"{random.choice(fname)} {random.choice(lname)}"
         return [random.choice(fname) + ' ' + random.choice(lname) for _ in range(num)]
 
     def ip_address(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return ipv4_gen()
         return [ipv4_gen() for _ in range(num)]
 
     def job_title(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return random.choice(job_titles)
         return random.choices(job_titles, k=num)
 
     def blood_type(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return random.choice(blood_types)
         return random.choices(blood_types, k=num)
 
     def hair_color(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return random.choice(hair_colors)
         return random.choices(hair_colors, k=num)
 
     def dob_age(self, num: int = None) -> List[Tuple[str, int]]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return generate_dob_age()
         return [generate_dob_age() for _ in range(num)]
 
     def height_weight(self, num: int = None) -> List[Tuple[int, int]]:
         num = self.num if num is None else num
+        if num == 1 or num is None:
+            return generate_random_height_weight()
         return [generate_random_height_weight() for _ in range(num)]
-
-    def city(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        return random.choices(cities_name, k=num)
-
-    def phone_number(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        return [f'+1{random.randint(1000000000, 9999999999)}' for _ in range(num)]
-
-    def postal_code(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        return [str(random.randint(10000, 99999)) for _ in range(num)]
-
-    def state(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        return random.choices(states_names, k=num)
 
     def generate_address(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
@@ -127,7 +129,13 @@ class RandomProfile(object):
             state = random.choice(states_names)
             zip_code = random.randint(10000, 99999)
 
-            address = f'{street_num}, {street}, {city} {zip_code} {state}, USA'
+            address = {
+                "street_num": street_num,
+                "street": street,
+                "city": city,
+                "state": state,
+                "zip_code": zip_code
+            }
             address_list.append(address)
 
         return address_list
@@ -136,40 +144,34 @@ class RandomProfile(object):
         num = self.num if num is None else num
         profile_list = []
         for _ in range(num):
-            unique_id = str(uuid.uuid4())
+            phone_number = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
+            dob, age = self.dob_age(num=1)
+            height, weight = self.height_weight(num=1)
+            address = self.generate_address()[0]
+            full_address = '{} {} {}, {} {}'.format(address['street_num'],
+                                                    address['street'],
+                                                    address['city'],
+                                                    address['state'],
+                                                    address['zip_code'])
 
-            first = random.choice(fname)
-            last = random.choice(lname)
-            full_name = first + ' ' + last
+            profile = {}
+            profile['id'] = str(uuid.uuid4())
+            profile['first_name'] = self.first_name(num=1)
+            profile['last_name'] = self.first_name(num=1)
+            profile['full_name'] = profile['first_name'] + ' ' + profile['last_name']
+            profile['job_title'] = self.job_title(num=1)
+            profile['dob'] = dob
+            profile['age'] = age
+            profile['phone_number'] = phone_number
+            profile['email'] = profile['first_name'].lower() + profile['last_name'].lower() + '@example.com'
+            profile['address'] = address
+            profile['full_address'] = full_address
+            profile['blood_type'] = self.blood_type(num=1)
+            profile['height'] = height
+            profile['weight'] = weight
+            profile['hair_color'] = self.hair_color(num=1)
+            profile['ip_address'] = self.ip_address(num=1)
 
-            job_title = random.choice(job_titles)
-            dob, age = generate_dob_age()
-
-            phone = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
-            email = first.lower() + last.lower() + '@example.com'
-
-            blood_type = random.choice(blood_types)
-            height, weight = generate_random_height_weight()
-            hair_color = random.choice(hair_colors)
-            ip_address = ipv4_gen()
-
-            profile_dict = {}
-            profile_dict['id'] = unique_id
-            profile_dict['first_name'] = first
-            profile_dict['last_name'] = last
-            profile_dict['full_name'] = full_name
-            profile_dict['job_title'] = job_title
-            profile_dict['dob'] = dob
-            profile_dict['age'] = age
-            profile_dict['phone_number'] = phone
-            profile_dict['email'] = email
-            profile_dict['address'] = self.generate_address()[0]
-            profile_dict['blood_type'] = blood_type
-            profile_dict['height'] = height
-            profile_dict['weight'] = weight
-            profile_dict['hair_color'] = hair_color
-            profile_dict['ip_address'] = ip_address
-
-            profile_list.append(profile_dict)
+            profile_list.append(profile)
 
         return profile_list
