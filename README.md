@@ -32,16 +32,21 @@
 
 [RandomProfile](https://pypi.org/project/random-profile/) is a powerful and simple tool to generate fake data. You can use it to mock classes, populate databases and much more. You can check the full documentation here. Check on [Pypi](https://pypi.org/project/random-profile/)
 
+```sh
+pip install random-profile
+```
 
 ## Documentation
 
-Documentation is available at [ReadTheDocs](https://randomprofilegenerator.readthedocs.io/en/latest/)
-
-![RandomProfile](/docs/assets/sample.png)
+Full Documentation is available at [ReadTheDocs](https://randomprofilegenerator.readthedocs.io/en/latest/)
 
 ## Upcoming Features
 
-- Support for more languages
+- More Data Fields
+- More Data Types
+- Make it more user friendly and easy to use
+- Make it more efficient and faster
+- Cython Support
 
 ## Changelog
 
@@ -60,3 +65,7 @@ The project is licensed under the <a href="/LICENSE">MIT</a> license.
 <a href="https://github.com/codePerfectPlus/awesomeScripts/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=codePerfectPlus/randomprofilegenerator" />
 </a>
+
+## Sponsor 
+
+Email: [Pycontributors](mailto:deepak008@live.com) for sponsorship details.
