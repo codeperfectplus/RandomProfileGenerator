@@ -1,5 +1,7 @@
 import unittest
+import sys
 
+sys.path.append('.')
 from typing import List, Tuple
 from random_profile import RandomProfile
 random_profile = RandomProfile(num=1)

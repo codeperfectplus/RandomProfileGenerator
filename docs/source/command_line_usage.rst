@@ -15,15 +15,19 @@ Usages:
     rp -n 10 -p
 
     optional arguments:
-        -h, --help      show this help message and exit
-        -n N            Number of random profiles
-    
-        -f, --fullname  Get full name instead of first name
-        -p, --profile   Get full profile instead of first name
-        -l, --lastname  Get last name instead of first name
-        -ip, --ipv4     Get an ipv4 IP address
-        -j, --jobtitle  Get job title
-    
+        -h, --help       show this help message and exit
+        -v, --version    show program's version number and exit
+        --server         Start server
+        --port PORT      Port number
+        -n N             Number of random profiles
+        -p, --profile    Get full profile
+        -f, --firstname  Get first name
+        -l, --lastname   Get last name instead of first name
+        --fullname       Get full name instead of first name
+        --ip             Get an ipv4 IP address
+        --job            Get job title
+        --address        Get address
+
 Get Random Profile:
 -------------------
 
@@ -64,6 +68,7 @@ Get IPv4 Address:
     # n = number of random profiles, ip = ipv4
     rp -n 10 -ip
 
+
 Get Random Profile and Save to File:
 ------------------------------------
 
@@ -87,3 +92,4 @@ Get Random Profile version:
     rp --version
 
     rp 0.2.3
+
