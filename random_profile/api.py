@@ -116,7 +116,7 @@ async def get_ip_address(params: query_model = Depends()):
         return overloaded_error
 
     num = params_as_dict['num']
-    ip_addresses = rp.ipv4(num)
+    ip_addresses = rp.ipaddress(num)
     metadata['data'] = ip_addresses
     return metadata
 

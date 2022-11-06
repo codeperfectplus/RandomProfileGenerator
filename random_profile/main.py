@@ -26,6 +26,7 @@ street_names_txt = os.path.join(ASSETS_DIR, "street_names.txt")
 cities_name_txt = os.path.join(ASSETS_DIR, "cities_name.txt")
 states_names_txt = os.path.join(ASSETS_DIR, "states_names.txt")
 job_titles_txt = os.path.join(ASSETS_DIR, "job_titles.txt")
+states_hash_json = os.path.join(ASSETS_DIR, "states_hash.json")
 
 # loading data from txt files
 fname = load_txt_file(fname_txt)
@@ -104,14 +105,18 @@ class RandomProfile(object):
         num = self.num if num is None else num
         return random.choices(cities_name, k=num)
 
-    def phone(self, num: int = None) -> List[str]:
+    def phone_number(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
         return [f'+1{random.randint(1000000000, 9999999999)}' for _ in range(num)]
 
-    def postal(self, num: int = None) -> List[str]:
+    def postal_code(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
         return [str(random.randint(10000, 99999)) for _ in range(num)]
 
+    def state(self, num: int = None) -> List[str]:
+        num = self.num if num is None else num
+        return random.choices(states_names, k=num)
+    
     def generate_address(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
         address_list = []
@@ -156,7 +161,7 @@ class RandomProfile(object):
             profile_dict['job_title'] = job_title
             profile_dict['dob'] = dob
             profile_dict['age'] = age
-            profile_dict['phone'] = phone
+            profile_dict['phone_number'] = phone
             profile_dict['email'] = email
             profile_dict['address'] = self.generate_address()[0]
             profile_dict['blood_type'] = blood_type

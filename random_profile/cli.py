@@ -18,15 +18,16 @@ def main():
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument(
-        "-f",
         "--fullname",
         help="Get full name instead of first name",
         action="store_true",
     )
     group.add_argument(
-        "-p",
-        "--profile",
-        help="Get full profile instead of first name",
+        "-p", "--profile", help="Get full profile", action="store_true"
+        )
+    group.add_argument(
+        "--firstname",
+        help="Get first name",
         action="store_true",
     )
     group.add_argument(
@@ -37,40 +38,69 @@ def main():
     )
     group.add_argument(
         "-ip",
-        "--ipv4",
+        "--ipaddress",
         help="Get an ipv4 IP address",
         action="store_true",
     )
     group.add_argument(
-        "-j",
         "--jobtitle",
         help="Get job title",
         action="store_true",
     )
     group.add_argument(
-        "-a",
         "--address",
         help="Get address",
         action="store_true",
     )
-
+    group.add_argument(
+        "--phone",
+        help="Get phone number",
+        action="store_true",
+    )
+    group.add_argument(
+        "--city",
+        help="Get city",
+        action="store_true",
+    )
+    group.add_argument(
+        "--state",
+        help="Get state",
+        action="store_true",
+    )
+    group.add_argument(
+        "--postal",
+        help = "Get postal code",
+        action="store_true",
+    )
+    
     args = parser.parse_args()
 
+    rp = RandomProfile(args.n)
+    
     if args.server:
         start_server(args.port)
-    rp = RandomProfile(args.n)
-    if args.fullname:
+    elif args.fullname:
         pprint(rp.full_name())
+    elif args.firstname:
+        pprint(rp.first_name())
     elif args.lastname:
         pprint(rp.last_name())
     elif args.jobtitle:
         pprint(rp.job_title())
-    elif args.ipv4:
-        pprint(rp.ipv4())
+    elif args.ipaddress:
+        pprint(rp.ip_address())
     elif args.address:
         pprint(rp.generate_address())
     elif args.profile:
         pprint(rp.full_profile())
+    elif args.phone:
+        pprint(rp.phone_number())
+    elif args.city:
+        pprint(rp.city())
+    elif args.postal:
+        pprint(rp.postal_code())
+    elif args.state:
+        pprint(rp.state())
     else:
         pprint('Type `rp -h` for help')
 
