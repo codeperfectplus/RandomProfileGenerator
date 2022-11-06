@@ -7,7 +7,8 @@ All notable changes to this project will be documented in this file. The format 
 ## [1.0.1] - 
 
 - server can be start from cli
-- More Enpoints exposed to the API
+- More Endpoints exposed to the API/CLI
+- Code refactored
 
 
 ## [1.0.0] - 05-11-2022

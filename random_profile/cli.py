@@ -4,16 +4,17 @@ import argparse
 from pprint import pprint
 
 sys.path.append('.')
-from random_profile.main import RandomProfile, version
+from random_profile.main import RandomProfile, VERSION
 from random_profile.api import start_server
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-v', '--version', action='version', version=version)
-    parser.add_argument("-n", help="Number of random profiles", type=int, default=1)
+    parser.add_argument('-v', '--version', action='version', version=VERSION)
     parser.add_argument("--server", help="Start server", action="store_true")
     parser.add_argument("--port", help="Port number", type=int, default=8000)
+
+    parser.add_argument("-n", help="Number of random profiles", type=int, default=1)
 
     group = parser.add_mutually_exclusive_group()
     group.add_argument(

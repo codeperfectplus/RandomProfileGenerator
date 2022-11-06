@@ -11,7 +11,6 @@ class RandomProfileTest(unittest.TestCase):
     def test_lname_with_num(self):
         self.assertEqual(len(RandomProfile(num=10).last_name()), 10)
 
-
     def test_full_name_with_num(self):
         self.assertEqual(len(RandomProfile(num=10).full_name()), 10)
 

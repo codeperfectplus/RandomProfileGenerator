@@ -19,13 +19,13 @@
 <img src="https://img.shields.io/pypi/dw/random-profile.svg">
 <img src="https://img.shields.io/pypi/dm/random-profile.svg">
 </p>
-<p align="center"> 
+<p align="center">
 
 <img alt="GitHub pull-requests" src="https://img.shields.io/github/issues-pr/Py-Contributors/RandomProfileGenerator">
 
-<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator"> 
+<img alt="GitHub forks" src="https://img.shields.io/github/forks/Py-Contributors/RandomProfileGenerator">
 
-<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator"> 
+<img alt="contributors" src="https://img.shields.io/github/contributors/Py-Contributors/RandomProfileGenerator">
 
 <img alt="GitHub stars" src="https://img.shields.io/github/stars/Py-Contributors/RandomProfileGenerator"> </p>
 
@@ -53,7 +53,7 @@ Check the [Contributing](/CONTRIBUTING.md) for the contribution guidelines.
 
 ## License
 
-The project is licensed under the <a href="/LICENSE">MIT</a> license. 
+The project is licensed under the <a href="/LICENSE">MIT</a> license.
 
 ## Contributors
 

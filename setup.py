@@ -15,11 +15,9 @@ setuptools.setup(
     data_files=[('assets', glob('random_profile/assets/*'))],
     url="https://github.com/codePerfectPlus/Random-Profile-Generator",
     packages=setuptools.find_packages(),
-    project_urls= {
-        "Documentation": "https://pycontributors.readthedocs.io/projects/randomprofilegenerator/en/latest/",
-        "Source": "https://github.com/Py-Contributors/RandomProfileGenerator",
-        "Tracker": "https://github.com/Py-Contributors/RandomProfileGenerator/issues"
-    },
+    project_urls={"Documentation": "https://pycontributors.readthedocs.io/projects/randomprofilegenerator/en/latest/",
+                  "Source": "https://github.com/Py-Contributors/RandomProfileGenerator",
+                  "Tracker": "https://github.com/Py-Contributors/RandomProfileGenerator/issues"},
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Programming Language :: Python :: 3",
@@ -30,8 +28,8 @@ setuptools.setup(
         "Topic :: Utilities",
         "Environment :: Plugins"],
     entry_points={
-        "console_scripts": ['rp = random_profile.cli:main', 
+        "console_scripts": ['rp = random_profile.cli:main',
                             "random_profile = random_profile.cli:main"],
-        
+
     },
 )

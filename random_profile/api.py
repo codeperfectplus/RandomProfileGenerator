@@ -5,24 +5,26 @@ from fastapi.openapi.utils import get_openapi
 from pydantic import create_model
 
 sys.path.append('.')
-from random_profile.main import RandomProfile, version
+from random_profile.main import RandomProfile, VERSION
 
 # random_profile==0.2.3 required
 rp = RandomProfile()
 app = FastAPI()
 
+query_limit = 1000
 query_model = create_model("num", num=(int, ...))
 
 metadata = {
     "status": "200",
     "message": "Success",
-    "version": version,
+    "version": VERSION,
     "author": "Deepak Raj",
     "author_email": "deepak008@live.com",
-    "github": "https://github.com/codeperfectplus"
-    }
+    "github": "https://github.com/codeperfectplus"}
 
-overloaded_error = {"status": "400", "message": "Number of profiles should be less than 100"}
+overloaded_error = {"status": "429",
+                    "Error": "Too Many Requests",
+                    "message": "Number of profiles should be less than {}".format(query_limit)}
 
 
 @app.get("/")
@@ -38,7 +40,7 @@ async def get_full_profile(params: query_model = Depends()):
         num (int): number of profiles to generate
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
 
     num = params_as_dict['num']
@@ -56,9 +58,9 @@ async def get_first_name(params: query_model = Depends()):
 
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
-    
+
     num = params_as_dict['num']
     first_names = rp.first_name(num)
     metadata['data'] = first_names
@@ -74,7 +76,7 @@ async def get_last_name(params: query_model = Depends()):
 
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
 
     num = params_as_dict['num']
@@ -92,7 +94,7 @@ async def get_full_name(params: query_model = Depends()):
 
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
 
     num = params_as_dict['num']
@@ -110,7 +112,7 @@ async def get_ip_address(params: query_model = Depends()):
 
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
 
     num = params_as_dict['num']
@@ -128,7 +130,7 @@ async def get_job_title(params: query_model = Depends()):
 
     """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
 
     num = params_as_dict['num']
@@ -136,23 +138,25 @@ async def get_job_title(params: query_model = Depends()):
     metadata['data'] = job_titles
     return metadata
 
+
 @app.get("/api/v1/random_profile/address")
 async def get_address(params: query_model = Depends()):
     """ Get multiple address """
     params_as_dict = params.dict()
-    if params_as_dict['num'] > 100:
+    if params_as_dict['num'] > query_limit:
         return overloaded_error
     num = params_as_dict['num']
     address = rp.generate_address(num)
     metadata['data'] = address
     return metadata
 
+
 def custom_openapi():
     if app.openapi_schema:
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Random Profile Generator API",
-        version=metadata['version'],
+        version=VERSION,
         description="Python Module To Generate Random Profile Data",
         routes=app.routes,
     )
@@ -164,6 +168,7 @@ def custom_openapi():
 
 
 app.openapi = custom_openapi
+
 
 def start_server(port=8000):
     uvicorn.run(app, host="0.0.0.0", port=port)
