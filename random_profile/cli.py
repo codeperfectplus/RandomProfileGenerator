@@ -27,6 +27,7 @@ group.add_argument("--state", help="Get state", action="store_true")
 group.add_argument("--postal", help="Get postal code", action="store_true")
 args = parser.parse_args()
 
+
 def main():
     rp = RandomProfile(args.n)
     if args.server:
