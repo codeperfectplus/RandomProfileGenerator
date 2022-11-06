@@ -6,6 +6,7 @@ import json
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
 
+
 def load_json(file_name: str) -> dict:
     """ function to load json file into dict
 
@@ -18,6 +19,7 @@ def load_json(file_name: str) -> dict:
     with open(file_name, "r") as f:
         data = json.load(f)
     return data
+
 
 def load_txt_file(file_name: str) -> list:
     """ function to load txt file into list

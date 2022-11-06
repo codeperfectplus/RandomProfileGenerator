@@ -116,7 +116,7 @@ class RandomProfile(object):
     def state(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
         return random.choices(states_names, k=num)
-    
+
     def generate_address(self, num: int = None) -> List[str]:
         num = self.num if num is None else num
         address_list = []
