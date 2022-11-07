@@ -1,4 +1,1 @@
 pytest
-fastapi
-uvicorn
-codecov

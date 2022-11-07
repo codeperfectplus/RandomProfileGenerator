@@ -8,170 +8,157 @@ github : codeperfectplus
 import os
 import uuid
 import random
-from typing import List, Tuple
+import utils
 
-from random_profile.utils import ipv4_gen
-from random_profile.utils import load_txt_file
-from random_profile.utils import generate_dob_age
-from random_profile.utils import generate_random_height_weight
-from random_profile.utils import ASSETS_DIR
+from enums.gender import Gender
 
-VERSION = '2.0.0'
-
-fname_txt = os.path.join(ASSETS_DIR, 'fnames.txt')
-lname_txt = os.path.join(ASSETS_DIR, 'lnames.txt')
-hair_colors_txt = os.path.join(ASSETS_DIR, 'hair_colors.txt')
-blood_types_txt = os.path.join(ASSETS_DIR, 'blood_types.txt')
-street_names_txt = os.path.join(ASSETS_DIR, 'street_names.txt')
-cities_name_txt = os.path.join(ASSETS_DIR, 'cities_name.txt')
-states_names_txt = os.path.join(ASSETS_DIR, 'states_names.txt')
-job_titles_txt = os.path.join(ASSETS_DIR, 'job_titles.txt')
-states_hash_json = os.path.join(ASSETS_DIR, 'states_hash.json')
+lname_txt = os.path.join(utils.ASSETS_DIR, "lnames.txt")
+fname_male_txt = os.path.join(utils.ASSETS_DIR, "fnames_male.txt")
+fname_female_txt = os.path.join(utils.ASSETS_DIR, "fnames_female.txt")
+hair_colors_txt = os.path.join(utils.ASSETS_DIR, "hair_colors.txt")
+blood_types_txt = os.path.join(utils.ASSETS_DIR, "blood_types.txt")
+street_names_txt = os.path.join(utils.ASSETS_DIR, "street_names.txt")
+cities_name_txt = os.path.join(utils.ASSETS_DIR, "cities_name.txt")
+states_names_txt = os.path.join(utils.ASSETS_DIR, "states_names.txt")
+job_titles_txt = os.path.join(utils.ASSETS_DIR, "job_titles.txt")
+job_levels_txt = os.path.join(utils.ASSETS_DIR, "job_levels.txt")
 
 # loading data from txt files
-fname = load_txt_file(fname_txt)
-lname = load_txt_file(lname_txt)
-hair_colors = load_txt_file(hair_colors_txt)
-blood_types = load_txt_file(blood_types_txt)
-states_names = load_txt_file(states_names_txt)
-cities_name = load_txt_file(cities_name_txt)
-street_names = load_txt_file(street_names_txt)
-job_titles = load_txt_file(job_titles_txt)
+lname = utils.load_txt_file(lname_txt)
+fname_male = utils.load_txt_file(fname_male_txt)
+fname_female = utils.load_txt_file(fname_female_txt)
+hair_colors = utils.load_txt_file(hair_colors_txt)
+blood_types = utils.load_txt_file(blood_types_txt)
+states_names = utils.load_txt_file(states_names_txt)
+cities_name = utils.load_txt_file(cities_name_txt)
+street_names = utils.load_txt_file(street_names_txt)
+job_titles = utils.load_txt_file(job_titles_txt)
+job_levels = utils.load_txt_file(job_levels_txt)
 
 
 class RandomProfile(object):
-    ''' Random Profile Generator '''
-    def __init__(self, num: int = 1):
+    def __init__(self, num: int = 1, gender: Gender = None):
+        """
+        num = Total No. of Name You Want To Print
+        default is 1
+        To Print More Than one Name Change value of num
+        """
         self.num = num
+        self.gender = gender
 
-    def __str__(self) -> str:
-        return f'Random Profile Generator version {VERSION}'
+    def first_names(self, num: int = None, gender: Gender = None) -> list:
+        if num is None:
+            num = self.num
+        if gender is None:
+            gender = self.gender
 
-    def __repr__(self) -> str:
-        return f'RandomProfile(num={self.num})'
+        if gender is None:
+            names = fname_female + fname_male
+        elif gender.value == Gender.MALE.value:
+            names = fname_male
+        else:
+            names = fname_female
 
-    def __call__(self, num: int = None) -> List[dict]:
-        return self.full_profile(num)
+        first_name_list = [random.choice(names) for _ in range(num)]
+        return first_name_list
 
-    def __iter__(self):
-        yield self.full_profile()
+    def last_names(self, num: int = None) -> list:
+        if num is None:
+            num = self.num
 
-    def __next__(self):
-        yield self.full_profile()
+        last_name_list = [random.choice(lname) for _ in range(num)]
+        return last_name_list
 
-    def __len__(self):
-        return self.num
+    def full_names(self, num: int = None, gender: Gender = None) -> list:
+        if num is None:
+            num = self.num
 
-    def __getitem__(self, index):
-        return self.full_profile()[index]
+        if gender is None:
+            gender = self.gender
 
-    def first_name(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return random.choice(fname)
-        return random.choices(fname, k=num)
+        if gender is None:
+            names = fname_female + fname_male
+        elif gender.value == Gender.MALE.value:
+            names = fname_male
+        else:
+            names = fname_female
 
-    def last_name(self, num: int = None) -> list:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return random.choice(lname)
-        return random.choices(lname, k=num)
+        full_name_list = [random.choice(names) + ' ' + random.choice(lname) for _ in range(num)]
+        return full_name_list
 
-    def full_name(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return f'{random.choice(fname)} {random.choice(lname)}'
-        return [random.choice(fname) + ' ' + random.choice(lname) for _ in range(num)]
+    def full_profiles(self, num: int = None, gender: Gender = None) -> list:
+        if num is None:
+            num = self.num
 
-    def ip_address(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return ipv4_gen()
-        return [ipv4_gen() for _ in range(num)]
+        profile_list = []
 
-    def job_title(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return random.choice(job_titles)
-        return random.choices(job_titles, k=num)
-
-    def blood_type(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return random.choice(blood_types)
-        return random.choices(blood_types, k=num)
-
-    def hair_color(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return random.choice(hair_colors)
-        return random.choices(hair_colors, k=num)
-
-    def dob_age(self, num: int = None) -> List[Tuple[str, int]]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return generate_dob_age()
-        return [generate_dob_age() for _ in range(num)]
-
-    def height_weight(self, num: int = None) -> List[Tuple[int, int]]:
-        num = self.num if num is None else num
-        if num == 1 or num is None:
-            return generate_random_height_weight()
-        return [generate_random_height_weight() for _ in range(num)]
-
-    def generate_address(self, num: int = None) -> List[str]:
-        num = self.num if num is None else num
-        address_list = []
         for _ in range(num):
+            unique_id = uuid.uuid4().hex
+
+            # random gender for every profile in list
+            this_gender = utils.generate_random_gender() if gender is None else gender
+            first = random.choice(fname_male if this_gender.value == Gender.MALE.value else fname_female)
+
+            last = random.choice(lname)
+            hair_color = random.choice(hair_colors)
+            blood_type = random.choice(blood_types)
+            full_name = first + ' ' + last
+            phone = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
+
+            ip_address = utils.ipv4_gen()
+
+            dob, age = utils.generate_dob_age()
+            height, weight = utils.generate_random_height_weight()
+
+            job_title = random.choice(job_titles)
+            job_experience = utils.generate_random_job_level(age, job_levels)
+
             street_num = random.randint(100, 999)
             street = random.choice(street_names)
-            city = random.choice(cities_name)
+            city, coords = utils.generate_random_city_coords(cities_name)
+            coords_pretty = utils.coords_string(coords)
             state = random.choice(states_names)
             zip_code = random.randint(10000, 99999)
 
-            address = {
-                'street_num': street_num,
-                'street': street,
-                'city': city,
-                'state': state,
-                'zip_code': zip_code
-            }
-            address_list.append(address)
+            address = f'{street_num} {street} St. {city} {state} {zip_code}'
+            email = first.lower() + last.lower() + '@example.com'
 
-        return address_list
+            mother = self.first_names(1, Gender.FEMALE)[0] + ' ' + last
+            father = self.first_names(1, Gender.MALE)[0] + ' ' + last
 
-    def full_profile(self, num: int = None) -> List[dict]:
-        num = self.num if num is None else num
-        profile_list = []
-        for _ in range(num):
-            phone_number = f'+1-{random.randint(300, 500)}-{random.randint(800, 999)}-{random.randint(1000,9999)}'
-            dob, age = self.dob_age(num=1)
-            height, weight = self.height_weight(num=1)
-            address = self.generate_address()[0]
-            full_address = '{} {} {}, {} {}'.format(address['street_num'],
-                                                    address['street'],
-                                                    address['city'],
-                                                    address['state'],
-                                                    address['zip_code'])
+            card = utils.generate_random_card()
 
-            profile = {}
-            profile['id'] = str(uuid.uuid4())
-            profile['first_name'] = self.first_name(num=1)
-            profile['last_name'] = self.first_name(num=1)
-            profile['full_name'] = profile['first_name'] + ' ' + profile['last_name']
-            profile['job_title'] = self.job_title(num=1)
-            profile['dob'] = dob
-            profile['age'] = age
-            profile['phone_number'] = phone_number
-            profile['email'] = profile['first_name'].lower() + profile['last_name'].lower() + '@example.com'
-            profile['address'] = address
-            profile['full_address'] = full_address
-            profile['blood_type'] = self.blood_type(num=1)
-            profile['height'] = height
-            profile['weight'] = weight
-            profile['hair_color'] = self.hair_color(num=1)
-            profile['ip_address'] = self.ip_address(num=1)
+            profile_dict = {}
+            profile_dict['id'] = unique_id
+            profile_dict['gender'] = this_gender.value
+            profile_dict['first_name'] = first
+            profile_dict['last_name'] = last
+            profile_dict['hair_color'] = hair_color
+            profile_dict['blood_type'] = blood_type
+            profile_dict['full_name'] = full_name
+            profile_dict['DOB'] = dob
+            profile_dict['age'] = age
+            profile_dict['height'] = height
+            profile_dict['weight'] = weight
+            profile_dict['phone'] = phone
+            profile_dict['address'] = address
+            profile_dict['coordinates'] = coords_pretty
+            profile_dict['email'] = email
+            profile_dict['job_title'] = job_title
+            profile_dict['job_job_experience'] = job_experience
+            profile_dict['ip_address'] = ip_address
+            profile_dict['mother'] = mother
+            profile_dict['father'] = father
+            profile_dict['payment_card'] = card
 
-            profile_list.append(profile)
+            profile_list.append(profile_dict)
 
         return profile_list
+
+    def ipv4(self) -> list:
+        ip_list = [utils.ipv4_gen() for _ in range(self.num)]
+        return ip_list
+
+    def job_title(self) -> list:
+        job_title_list = [random.choice(job_titles) for _ in range(self.num)]
+        return job_title_list
