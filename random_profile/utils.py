@@ -1,17 +1,34 @@
 import math
+import sys
 from datetime import datetime
-from enums.gender import Gender
 import random
 import os
-import logging
+import json
+
+sys.path.append('.')
+
+from random_profile.enums.gender import Gender
 
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ASSETS_DIR = os.path.join(ROOT_DIR, "random_profile", "assets")
+
+
+def load_json(file_name: str) -> dict:
+    """ function to load json file into dict
+
+    args:
+        file_name (str): file name to load
+
+    returns:
+        dict: dict of data from file
+    """
+    with open(file_name, "r") as f:
+        data = json.load(f)
+    return data
+
+
 # radius of the earh in meters
 M_PER_DEGREE = 111319.5
-
-os.makedirs('log', exist_ok=True)
-logging.basicConfig(filename='log/example.log', encoding='utf-8', level=logging.DEBUG)
 
 
 def generate_random_gender() -> Gender:
@@ -29,9 +46,6 @@ def load_txt_file(file_name: str) -> list:
     """
     with open(file_name, "r") as f:
         data = f.read().splitlines()
-
-    basename = os.path.basename(file_name)
-    logging.debug(f"loaded {basename} with {len(data)} items")
     return data
 
 
@@ -91,12 +105,19 @@ def generate_random_card() -> dict:
 
     return card
 
-
 def generate_random_job_level(age: int, levels) -> str:
     levels_with_ranges = [level.split(';') for level in levels]
     applicable_level = list(filter(lambda level: (int(level[1]) <= age <= int(level[2])), levels_with_ranges))
 
-    return applicable_level[0][0]
+    level = ""
+
+    try:
+        level = applicable_level[0][0]
+    except:
+        print(applicable_level)
+        print(age)
+
+    return level
 
 
 def random_coords_from_point(lat: float, lon: float, max_distance: float = 1000) -> tuple:
@@ -107,7 +128,6 @@ def random_coords_from_point(lat: float, lon: float, max_distance: float = 1000)
     lon_ = lon + math.sin(angle) * offset / M_PER_DEGREE
 
     return lat_, lon_
-
 
 def generate_random_city_coords(cities) -> tuple:
     city = random.choice(cities)
@@ -121,15 +141,13 @@ def generate_random_city_coords(cities) -> tuple:
     coords = random_coords_from_point(lat, lon)
     return name, coords
 
-
 def decdeg2dms(dd):
     mult = -1 if dd < 0 else 1
-    mnt, sec = divmod(abs(dd) * 3600, 60)
-    deg, mnt = divmod(mnt, 60)
-    return mult * deg, mult * mnt, mult * sec
+    mnt,sec = divmod(abs(dd)*3600, 60)
+    deg,mnt = divmod(mnt, 60)
+    return mult*deg, mult*mnt, mult*sec
 
-
-def coords_string(coords: tuple) -> str:
+def coords_string (coords: tuple) -> str:
     dms_lat = decdeg2dms(abs(coords[0]))
     dms_lon = decdeg2dms(abs(coords[1]))
 

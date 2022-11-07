@@ -2,8 +2,6 @@
 <h1 align="center">
   <a href="https://pypi.org/project/random-profile/">
   Random Profile Generator
-  </a>
-  V0.2.3
 </h1>
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
