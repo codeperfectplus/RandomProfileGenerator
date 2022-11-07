@@ -16,7 +16,7 @@ sys.path.append('.')
 from random_profile.enums.gender import Gender
 from random_profile import utils
 
-VERSION = '2.0.1'
+VERSION = '3.0.0'
 
 lname_txt = os.path.join(utils.ASSETS_DIR, "lnames.txt")
 fname_male_txt = os.path.join(utils.ASSETS_DIR, "fnames_male.txt")
@@ -43,12 +43,28 @@ job_levels = utils.load_txt_file(job_levels_txt)
 
 
 class RandomProfile(object):
+    """ Random Profile Generator 
+    
+    Args:
+        num (int, optional): Total No. of Name You Want To Print. Defaults to 1.
+        gender(str, optional): default is None. if you want to generate define gender then pass
+    
+    Methods:
+        full_profiles: Generate Full Profile
+        first_names: Generate First Name
+        last_names: Generate Last Name
+        full_names: Generate Full Name
+        email: Generate Email
+        phone_number: Generate Phone Number
+        dob_age: Generate Date of Birth and Age
+        height_weight: Generate Height and Weight
+        address: Generate Address
+        ip_address: Generate IP Address
+        hair_color: Generate Hair Color
+        blood_type: Generate Blood Type
+        job_title: Generate Job Title 
+    """
     def __init__(self, num: int = 1, gender: Gender = None):
-        """
-        num = Total No. of Name You Want To Print
-        default is 1
-        To Print More Than one Name Change value of num
-        """
         self.num = num
         self.gender = gender
 
@@ -132,8 +148,9 @@ class RandomProfile(object):
 
     def first_names(self, num: int = None, gender: Gender = None) -> list:
         num = self.num if num is None else num
-        if gender is None:
-            gender = self.gender
+        gender = self.gender if gender is None else gender
+
+        # DRY CODE
         if gender is None:
             names = fname_female + fname_male
         elif gender.value == Gender.MALE.value:
@@ -148,17 +165,14 @@ class RandomProfile(object):
 
     def last_names(self, num: int = None) -> list:
         num = self.num if num is None else num
-        if num is None:
-            num = self.num
         if num == 1 or num is None:
             return random.choice(lname)
+
         return random.choices(lname, k=num)
 
     def full_names(self, num: int = None, gender: Gender = None) -> list:
         num = self.num if num is None else num
-
-        if gender is None:
-            gender = self.gender
+        gender = self.gender if gender is None else gender
 
         if gender is None:
             names = fname_female + fname_male
@@ -178,7 +192,6 @@ class RandomProfile(object):
         profile_list = []
 
         for _ in range(num):
-
             # random gender for every profile in list
             this_gender = utils.generate_random_gender() if gender is None else gender
             first = random.choice(fname_male if this_gender.value == Gender.MALE.value else fname_female)

@@ -1,5 +1,6 @@
 
 import sys
+import random
 import argparse
 from pprint import pprint
 
@@ -12,6 +13,7 @@ from enums.gender import Gender
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-v', '--version', action='version', version=VERSION)
+parser.add_argument('--repeat', help='Repeat the output', action='store_true')
 parser.add_argument('--server', help='Start server', action='store_true')
 parser.add_argument('--port', help='Port number', type=int, default=8000)
 parser.add_argument('-n', '--number', help='Number of random profiles', type=int, default=1)
@@ -31,6 +33,8 @@ output_form_arg_group.add_argument('-j', '--job', help='Get job title', action='
 output_form_arg_group.add_argument('-a', '--address', help='Get address', action='store_true')
 args = parser.parse_args()
 
+if args.repeat:
+    random.seed(0)
 
 def main():
     gender = None
