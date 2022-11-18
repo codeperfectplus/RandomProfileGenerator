@@ -16,7 +16,7 @@ sys.path.append('.')
 from random_profile.enums.gender import Gender
 from random_profile import utils
 
-VERSION = '3.0.0'
+VERSION = '3.0.1'
 
 lname_txt = os.path.join(utils.ASSETS_DIR, "lnames.txt")
 fname_male_txt = os.path.join(utils.ASSETS_DIR, "fnames_male.txt")

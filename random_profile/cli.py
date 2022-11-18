@@ -9,7 +9,7 @@ sys.path.append('.')
 from random_profile.main import RandomProfile
 from random_profile.main import VERSION
 from random_profile.api import start_server
-from enums.gender import Gender
+from random_profile.enums.gender import Gender
 
 parser = argparse.ArgumentParser()
 parser.add_argument('-v', '--version', action='version', version=VERSION)

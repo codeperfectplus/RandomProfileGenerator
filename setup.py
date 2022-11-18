@@ -9,7 +9,7 @@ with open("requirements.txt", "r") as fh:
 
 setuptools.setup(
     name="random_profile",
-    version="3.0.0",
+    version="3.0.1",
     author="Deepak Raj",
     author_email="deepak008@live.com",
     description="Generate Random Profile",

@@ -1,7 +1,7 @@
 
 <h1 align="center">
   <a href="https://pypi.org/project/random-profile/">
-  Random Profile Generator
+  Random Profile Generator 3.0.1
 </h1>
 
 <h4 align="center">Python Module To Generate Random Profile Data</h4>
