@@ -6,7 +6,7 @@ from pydantic import create_model
 
 sys.path.append('.')
 from random_profile.main import RandomProfile
-from random_profile import __version__
+from random_profile.__about__ import __version__
 
 # random_profile==0.2.3 required
 rp = RandomProfile()
