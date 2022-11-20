@@ -1,6 +1,8 @@
 import setuptools
 from glob import glob
 
+from random_profile.__about__ import *
+
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
@@ -8,16 +10,16 @@ with open("requirements.txt", "r") as fh:
     requirements = fh.read().splitlines()
 
 setuptools.setup(
-    name="random_profile",
-    version="3.0.1",
-    author="Deepak Raj",
-    author_email="deepak008@live.com",
-    description="Generate Random Profile",
+    name=__package_name__,
+    version=__version__,
+    author=__author__,
+    author_email=__email__,
+    description=__description__,
     long_description=long_description,
     long_description_content_type="text/markdown",
     install_requires=requirements,
     data_files=[('assets', glob('random_profile/assets/*'))],
-    url="https://github.com/Py-Contributors/RandomProfileGenerator",
+    url=__github__,
     packages=setuptools.find_packages(),
     project_urls={"Documentation": "https://pycontributors.readthedocs.io/projects/randomprofilegenerator/en/latest/",
                   "Source": "https://github.com/Py-Contributors/RandomProfileGenerator",

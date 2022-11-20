@@ -1,10 +1,14 @@
+import sys
+sys.path.append('.')
+
+from random_profile.__about__ import *
 from datetime import datetime
 
 
-project = 'Random Profile Generator'
-description = 'A random profile generator for testing purposes.'
-author = 'Deeapk Raj'
-release = '0.2.3'
+project = __package_name__
+description = __description__
+author = __author__
+release = __version__
 year = datetime.now().year
 copyright = "{} Deepak Raj".format(year)
 source_suffix = ".rst"
@@ -21,16 +25,10 @@ extensions = [
 
 autosectionlabel_prefix_document = True
 
-html_theme = 'sphinx_rtd_theme'  # 'pydata_sphinx_theme' 'alabaster'
+html_theme = 'sphinx_rtd_theme'
 
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '.venv']
 html_sidebars = {'**': ['globaltoc.html', 'relations.html', 'sourcelink.html', 'searchbox.html']}
-
-rst_epilog = """
-.. |project| replace:: Random Profile Generator
-.. |copyright| replace:: Copyright © {} Deepak Raj
-.. | community | replace:: `Py-Contributors <https://github.com/py-contributors/>`_
-""".format(year)
 
 # epub settings
 epub_basename = project

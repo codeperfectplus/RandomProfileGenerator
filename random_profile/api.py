@@ -5,7 +5,8 @@ from fastapi.openapi.utils import get_openapi
 from pydantic import create_model
 
 sys.path.append('.')
-from random_profile.main import RandomProfile, VERSION
+from random_profile.main import RandomProfile
+from random_profile import __version__
 
 # random_profile==0.2.3 required
 rp = RandomProfile()
@@ -17,7 +18,7 @@ query_model = create_model("num", num=(int, ...))
 metadata = {
     "status": "200",
     "message": "Success",
-    "version": VERSION,
+    "version": __version__,
     "author": "Deepak Raj",
     "author_email": "deepak008@live.com",
     "github": "https://github.com/codeperfectplus"}
@@ -156,7 +157,7 @@ def custom_openapi():
         return app.openapi_schema
     openapi_schema = get_openapi(
         title="Random Profile Generator API",
-        version=VERSION,
+        version=__version__,
         description="Python Module To Generate Random Profile Data",
         routes=app.routes,
     )

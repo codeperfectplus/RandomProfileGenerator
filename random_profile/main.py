@@ -15,8 +15,7 @@ sys.path.append('.')
 
 from random_profile.enums.gender import Gender
 from random_profile import utils
-
-VERSION = '3.0.1'
+from random_profile.__about__ import __version__
 
 lname_txt = os.path.join(utils.ASSETS_DIR, "lnames.txt")
 fname_male_txt = os.path.join(utils.ASSETS_DIR, "fnames_male.txt")
@@ -69,7 +68,7 @@ class RandomProfile(object):
         self.gender = gender
 
     def __str__(self) -> str:
-        return f'Random Profile Generator version {VERSION}'
+        return f'Random Profile Generator version {__version__}'
 
     def __repr__(self) -> str:
         return f'RandomProfile(num={self.num})'
