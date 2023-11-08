@@ -1,13 +1,22 @@
 import setuptools
 from glob import glob
 
-from random_profile.__about__ import __package_name__, __version__, __author__, __email__, __description__, __github__
-
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
 with open("requirements.txt", "r") as fh:
     requirements = fh.read().splitlines()
+
+__title__ = 'RandomProfileGenerator'
+__package_name__ = 'random_profile'
+__version__ = '3.0.2'
+__description__ = "Python Module To Generate Random Profile Data"
+__email__ = "deepak008@live.com"
+__author__ = 'Deepak Raj'
+__github__ = 'https://github.com/Py-Contributors/RandomProfileGenerator'
+__pypi__ = 'https://pypi.org/project/random-profile/'
+__license__ = 'MIT License'
+
 
 setuptools.setup(
     name=__package_name__,
