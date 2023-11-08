@@ -1,7 +1,7 @@
 import setuptools
 from glob import glob
 
-from random_profile.__about__ import *
+from random_profile.__about__ import __package_name__, __version__, __author__, __email__, __description__, __github__
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
