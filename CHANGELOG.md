@@ -4,9 +4,22 @@ All notable changes to this project will be documented in this file. The format 
 
 ## Changelog
 
-## [V3.0.2] - Minor Release - 
+## [V3.0.5] - Minor Release - 02-01-2025
+
+- [x] Bug fixes
+
+## [V3.0.4] - Minor Release - 02-01-2025
+
+- [x] Bug fixes
+
+## [V3.0.3] - Minor Release - 25-11-2024
+
+- [x] Bug fixes
+
+## [V3.0.2] - Minor Release - 08-11-2023
 
 - [x] Updating API Documentation
+- [x] Bug fixes
 
 ## [V3.0.1] - Minor Release - 18-11-2022
 
